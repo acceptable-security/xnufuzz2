@@ -1,0 +1,7 @@
+# For privacy, don't copy these.
+raw/syscall_logs.txt
+data/examples.json
+xnufuzz2
+.DS_Store
+.gdb_history
+results/*

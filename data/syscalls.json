@@ -1,0 +1,6724 @@
+[
+    {
+        "args": [
+            {
+                "type": "int", 
+                "name": "fd"
+            }, 
+            {
+                "type": "user_addr_t", 
+                "name": "cbuf"
+            }, 
+            {
+                "type": "user_size_t", 
+                "name": "nbyte"
+            }
+        ], 
+        "number": 3, 
+        "funcname": "read"
+    }, 
+    {
+        "args": [
+            {
+                "type": "int", 
+                "name": "fd"
+            }, 
+            {
+                "type": "user_addr_t", 
+                "name": "cbuf"
+            }, 
+            {
+                "type": "user_size_t", 
+                "name": "nbyte"
+            }
+        ], 
+        "number": 4, 
+        "funcname": "write"
+    }, 
+    {
+        "args": [
+            {
+                "type": "user_addr_t", 
+                "name": "path"
+            }, 
+            {
+                "type": "int", 
+                "name": "flags"
+            }, 
+            {
+                "type": "int", 
+                "name": "mode"
+            }
+        ], 
+        "number": 5, 
+        "funcname": "open"
+    }, 
+    {
+        "args": [
+            {
+                "type": "int", 
+                "name": "fd"
+            }
+        ], 
+        "number": 6, 
+        "funcname": "close"
+    }, 
+    {
+        "args": [
+            {
+                "type": "int", 
+                "name": "pid"
+            }, 
+            {
+                "type": "user_addr_t", 
+                "name": "status"
+            }, 
+            {
+                "type": "int", 
+                "name": "options"
+            }, 
+            {
+                "type": "user_addr_t", 
+                "name": "rusage"
+            }
+        ], 
+        "number": 7, 
+        "funcname": "wait4"
+    }, 
+    {
+        "args": [
+            {
+                "type": "user_addr_t", 
+                "name": "path"
+            }, 
+            {
+                "type": "user_addr_t", 
+                "name": "link"
+            }
+        ], 
+        "number": 9, 
+        "funcname": "link"
+    }, 
+    {
+        "args": [
+            {
+                "type": "user_addr_t", 
+                "name": "path"
+            }
+        ], 
+        "number": 10, 
+        "funcname": "unlink"
+    }, 
+    {
+        "args": [
+            {
+                "type": "user_addr_t", 
+                "name": "path"
+            }
+        ], 
+        "number": 12, 
+        "funcname": "chdir"
+    }, 
+    {
+        "args": [
+            {
+                "type": "int", 
+                "name": "fd"
+            }
+        ], 
+        "number": 13, 
+        "funcname": "fchdir"
+    }, 
+    {
+        "args": [
+            {
+                "type": "user_addr_t", 
+                "name": "path"
+            }, 
+            {
+                "type": "int", 
+                "name": "mode"
+            }, 
+            {
+                "type": "int", 
+                "name": "dev"
+            }
+        ], 
+        "number": 14, 
+        "funcname": "mknod"
+    }, 
+    {
+        "args": [
+            {
+                "type": "user_addr_t", 
+                "name": "path"
+            }, 
+            {
+                "type": "int", 
+                "name": "mode"
+            }
+        ], 
+        "number": 15, 
+        "funcname": "chmod"
+    }, 
+    {
+        "args": [
+            {
+                "type": "user_addr_t", 
+                "name": "path"
+            }, 
+            {
+                "type": "int", 
+                "name": "uid"
+            }, 
+            {
+                "type": "int", 
+                "name": "gid"
+            }
+        ], 
+        "number": 16, 
+        "funcname": "chown"
+    }, 
+    {
+        "args": [
+            {
+                "type": "user_addr_t", 
+                "name": "buf"
+            }, 
+            {
+                "type": "int", 
+                "name": "bufsize"
+            }, 
+            {
+                "type": "int", 
+                "name": "flags"
+            }
+        ], 
+        "number": 18, 
+        "funcname": "getfsstat"
+    }, 
+    {
+        "args": [
+            {
+                "type": "uid_t", 
+                "name": "uid"
+            }
+        ], 
+        "number": 23, 
+        "funcname": "setuid"
+    }, 
+    {
+        "args": [
+            {
+                "type": "int", 
+                "name": "req"
+            }, 
+            {
+                "type": "pid_t", 
+                "name": "pid"
+            }, 
+            {
+                "type": "caddr_t", 
+                "name": "addr"
+            }, 
+            {
+                "type": "int", 
+                "name": "data"
+            }
+        ], 
+        "number": 26, 
+        "funcname": "ptrace"
+    }, 
+    {
+        "args": [
+            {
+                "type": "int", 
+                "name": "s"
+            }, 
+            {
+                "type": "struct msghdr *", 
+                "name": "msg"
+            }, 
+            {
+                "type": "int", 
+                "name": "flags"
+            }
+        ], 
+        "number": 27, 
+        "funcname": "recvmsg"
+    }, 
+    {
+        "args": [
+            {
+                "type": "int", 
+                "name": "s"
+            }, 
+            {
+                "type": "caddr_t", 
+                "name": "msg"
+            }, 
+            {
+                "type": "int", 
+                "name": "flags"
+            }
+        ], 
+        "number": 28, 
+        "funcname": "sendmsg"
+    }, 
+    {
+        "args": [
+            {
+                "type": "int", 
+                "name": "s"
+            }, 
+            {
+                "type": "void *", 
+                "name": "buf"
+            }, 
+            {
+                "type": "size_t", 
+                "name": "len"
+            }, 
+            {
+                "type": "int", 
+                "name": "flags"
+            }, 
+            {
+                "type": "struct sockaddr *", 
+                "name": "from"
+            }, 
+            {
+                "type": "int *", 
+                "name": "fromlenaddr"
+            }
+        ], 
+        "number": 29, 
+        "funcname": "recvfrom"
+    }, 
+    {
+        "args": [
+            {
+                "type": "int", 
+                "name": "s"
+            }, 
+            {
+                "type": "caddr_t", 
+                "name": "name"
+            }, 
+            {
+                "type": "socklen_t *", 
+                "name": "anamelen"
+            }
+        ], 
+        "number": 30, 
+        "funcname": "accept"
+    }, 
+    {
+        "args": [
+            {
+                "type": "int", 
+                "name": "fdes"
+            }, 
+            {
+                "type": "caddr_t", 
+                "name": "asa"
+            }, 
+            {
+                "type": "socklen_t *", 
+                "name": "alen"
+            }
+        ], 
+        "number": 31, 
+        "funcname": "getpeername"
+    }, 
+    {
+        "args": [
+            {
+                "type": "int", 
+                "name": "fdes"
+            }, 
+            {
+                "type": "caddr_t", 
+                "name": "asa"
+            }, 
+            {
+                "type": "socklen_t *", 
+                "name": "alen"
+            }
+        ], 
+        "number": 32, 
+        "funcname": "getsockname"
+    }, 
+    {
+        "args": [
+            {
+                "type": "user_addr_t", 
+                "name": "path"
+            }, 
+            {
+                "type": "int", 
+                "name": "flags"
+            }
+        ], 
+        "number": 33, 
+        "funcname": "access"
+    }, 
+    {
+        "args": [
+            {
+                "type": "char *", 
+                "name": "path"
+            }, 
+            {
+                "type": "int", 
+                "name": "flags"
+            }
+        ], 
+        "number": 34, 
+        "funcname": "chflags"
+    }, 
+    {
+        "args": [
+            {
+                "type": "int", 
+                "name": "fd"
+            }, 
+            {
+                "type": "int", 
+                "name": "flags"
+            }
+        ], 
+        "number": 35, 
+        "funcname": "fchflags"
+    }, 
+    {
+        "args": [
+            {
+                "type": "int", 
+                "name": "pid"
+            }, 
+            {
+                "type": "int", 
+                "name": "signum"
+            }, 
+            {
+                "type": "int", 
+                "name": "posix"
+            }
+        ], 
+        "number": 37, 
+        "funcname": "kill"
+    }, 
+    {
+        "args": [
+            {
+                "type": "u_int", 
+                "name": "fd"
+            }
+        ], 
+        "number": 41, 
+        "funcname": "dup"
+    }, 
+    {
+        "args": [
+            {
+                "type": "int", 
+                "name": "signum"
+            }, 
+            {
+                "type": "struct __sigaction *", 
+                "name": "nsa"
+            }, 
+            {
+                "type": "struct sigaction *", 
+                "name": "osa"
+            }
+        ], 
+        "number": 46, 
+        "funcname": "sigaction"
+    }, 
+    {
+        "args": [
+            {
+                "type": "int", 
+                "name": "how"
+            }, 
+            {
+                "type": "user_addr_t", 
+                "name": "mask"
+            }, 
+            {
+                "type": "user_addr_t", 
+                "name": "omask"
+            }
+        ], 
+        "number": 48, 
+        "funcname": "sigprocmask"
+    }, 
+    {
+        "args": [
+            {
+                "type": "char *", 
+                "name": "namebuf"
+            }, 
+            {
+                "type": "u_int", 
+                "name": "namelen"
+            }
+        ], 
+        "number": 49, 
+        "funcname": "getlogin"
+    }, 
+    {
+        "args": [
+            {
+                "type": "char *", 
+                "name": "namebuf"
+            }
+        ], 
+        "number": 50, 
+        "funcname": "setlogin"
+    }, 
+    {
+        "args": [
+            {
+                "type": "char *", 
+                "name": "path"
+            }
+        ], 
+        "number": 51, 
+        "funcname": "acct"
+    }, 
+    {
+        "args": [
+            {
+                "type": "struct sigvec *", 
+                "name": "osv"
+            }
+        ], 
+        "number": 52, 
+        "funcname": "sigpending"
+    }, 
+    {
+        "args": [
+            {
+                "type": "struct sigaltstack *", 
+                "name": "nss"
+            }, 
+            {
+                "type": "struct sigaltstack *", 
+                "name": "oss"
+            }
+        ], 
+        "number": 53, 
+        "funcname": "sigaltstack"
+    }, 
+    {
+        "args": [
+            {
+                "type": "int", 
+                "name": "fd"
+            }, 
+            {
+                "type": "u_long", 
+                "name": "com"
+            }, 
+            {
+                "type": "caddr_t", 
+                "name": "data"
+            }
+        ], 
+        "number": 54, 
+        "funcname": "ioctl"
+    }, 
+    {
+        "args": [
+            {
+                "type": "int", 
+                "name": "opt"
+            }, 
+            {
+                "type": "char *", 
+                "name": "command"
+            }
+        ], 
+        "number": 55, 
+        "funcname": "reboot"
+    }, 
+    {
+        "args": [
+            {
+                "type": "char *", 
+                "name": "path"
+            }
+        ], 
+        "number": 56, 
+        "funcname": "revoke"
+    }, 
+    {
+        "args": [
+            {
+                "type": "char *", 
+                "name": "path"
+            }, 
+            {
+                "type": "char *", 
+                "name": "link"
+            }
+        ], 
+        "number": 57, 
+        "funcname": "symlink"
+    }, 
+    {
+        "args": [
+            {
+                "type": "char *", 
+                "name": "path"
+            }, 
+            {
+                "type": "char *", 
+                "name": "buf"
+            }, 
+            {
+                "type": "int", 
+                "name": "count"
+            }
+        ], 
+        "number": 58, 
+        "funcname": "readlink"
+    }, 
+    {
+        "args": [
+            {
+                "type": "char *", 
+                "name": "fname"
+            }, 
+            {
+                "type": "char **", 
+                "name": "argp"
+            }, 
+            {
+                "type": "char **", 
+                "name": "envp"
+            }
+        ], 
+        "number": 59, 
+        "funcname": "execve"
+    }, 
+    {
+        "args": [
+            {
+                "type": "int", 
+                "name": "newmask"
+            }
+        ], 
+        "number": 60, 
+        "funcname": "umask"
+    }, 
+    {
+        "args": [
+            {
+                "type": "user_addr_t", 
+                "name": "path"
+            }
+        ], 
+        "number": 61, 
+        "funcname": "chroot"
+    }, 
+    {
+        "args": [
+            {
+                "type": "caddr_t", 
+                "name": "addr"
+            }, 
+            {
+                "type": "size_t", 
+                "name": "len"
+            }, 
+            {
+                "type": "int", 
+                "name": "flags"
+            }
+        ], 
+        "number": 65, 
+        "funcname": "msync"
+    }, 
+    {
+        "args": [
+            {
+                "type": "caddr_t", 
+                "name": "addr"
+            }, 
+            {
+                "type": "size_t", 
+                "name": "len"
+            }
+        ], 
+        "number": 73, 
+        "funcname": "munmap"
+    }, 
+    {
+        "args": [
+            {
+                "type": "caddr_t", 
+                "name": "addr"
+            }, 
+            {
+                "type": "size_t", 
+                "name": "len"
+            }, 
+            {
+                "type": "int", 
+                "name": "prot"
+            }
+        ], 
+        "number": 74, 
+        "funcname": "mprotect"
+    }, 
+    {
+        "args": [
+            {
+                "type": "caddr_t", 
+                "name": "addr"
+            }, 
+            {
+                "type": "size_t", 
+                "name": "len"
+            }, 
+            {
+                "type": "int", 
+                "name": "behav"
+            }
+        ], 
+        "number": 75, 
+        "funcname": "madvise"
+    }, 
+    {
+        "args": [
+            {
+                "type": "user_addr_t", 
+                "name": "addr"
+            }, 
+            {
+                "type": "user_size_t", 
+                "name": "len"
+            }, 
+            {
+                "type": "user_addr_t", 
+                "name": "vec"
+            }
+        ], 
+        "number": 78, 
+        "funcname": "mincore"
+    }, 
+    {
+        "args": [
+            {
+                "type": "u_int", 
+                "name": "gidsetsize"
+            }, 
+            {
+                "type": "gid_t *", 
+                "name": "gidset"
+            }
+        ], 
+        "number": 79, 
+        "funcname": "getgroups"
+    }, 
+    {
+        "args": [
+            {
+                "type": "u_int", 
+                "name": "gidsetsize"
+            }, 
+            {
+                "type": "gid_t *", 
+                "name": "gidset"
+            }
+        ], 
+        "number": 80, 
+        "funcname": "setgroups"
+    }, 
+    {
+        "args": [
+            {
+                "type": "int", 
+                "name": "pid"
+            }, 
+            {
+                "type": "int", 
+                "name": "pgid"
+            }
+        ], 
+        "number": 82, 
+        "funcname": "setpgid"
+    }, 
+    {
+        "args": [
+            {
+                "type": "u_int", 
+                "name": "which"
+            }, 
+            {
+                "type": "struct itimerval *", 
+                "name": "itv"
+            }, 
+            {
+                "type": "struct itimerval *", 
+                "name": "oitv"
+            }
+        ], 
+        "number": 83, 
+        "funcname": "setitimer"
+    }, 
+    {
+        "args": [
+            {
+                "type": "u_int", 
+                "name": "which"
+            }, 
+            {
+                "type": "struct itimerval *", 
+                "name": "itv"
+            }
+        ], 
+        "number": 86, 
+        "funcname": "getitimer"
+    }, 
+    {
+        "args": [
+            {
+                "type": "u_int", 
+                "name": "from"
+            }, 
+            {
+                "type": "u_int", 
+                "name": "to"
+            }
+        ], 
+        "number": 90, 
+        "funcname": "dup2"
+    }, 
+    {
+        "args": [
+            {
+                "type": "int", 
+                "name": "fd"
+            }, 
+            {
+                "type": "int", 
+                "name": "cmd"
+            }, 
+            {
+                "type": "long", 
+                "name": "arg"
+            }
+        ], 
+        "number": 92, 
+        "funcname": "fcntl"
+    }, 
+    {
+        "args": [
+            {
+                "type": "int", 
+                "name": "nd"
+            }, 
+            {
+                "type": "u_int32_t *", 
+                "name": "in"
+            }, 
+            {
+                "type": "u_int32_t *", 
+                "name": "ou"
+            }, 
+            {
+                "type": "u_int32_t *", 
+                "name": "ex"
+            }, 
+            {
+                "type": "struct timeval *", 
+                "name": "tv"
+            }
+        ], 
+        "number": 93, 
+        "funcname": "select"
+    }, 
+    {
+        "args": [
+            {
+                "type": "int", 
+                "name": "fd"
+            }
+        ], 
+        "number": 95, 
+        "funcname": "fsync"
+    }, 
+    {
+        "args": [
+            {
+                "type": "int", 
+                "name": "which"
+            }, 
+            {
+                "type": "id_t", 
+                "name": "who"
+            }, 
+            {
+                "type": "int", 
+                "name": "prio"
+            }
+        ], 
+        "number": 96, 
+        "funcname": "setpriority"
+    }, 
+    {
+        "args": [
+            {
+                "type": "int", 
+                "name": "domain"
+            }, 
+            {
+                "type": "int", 
+                "name": "type"
+            }, 
+            {
+                "type": "int", 
+                "name": "protocol"
+            }
+        ], 
+        "number": 97, 
+        "funcname": "socket"
+    }, 
+    {
+        "args": [
+            {
+                "type": "int", 
+                "name": "s"
+            }, 
+            {
+                "type": "caddr_t", 
+                "name": "name"
+            }, 
+            {
+                "type": "socklen_t", 
+                "name": "namelen"
+            }
+        ], 
+        "number": 98, 
+        "funcname": "connect"
+    }, 
+    {
+        "args": [
+            {
+                "type": "int", 
+                "name": "which"
+            }, 
+            {
+                "type": "id_t", 
+                "name": "who"
+            }
+        ], 
+        "number": 100, 
+        "funcname": "getpriority"
+    }, 
+    {
+        "args": [
+            {
+                "type": "int", 
+                "name": "s"
+            }, 
+            {
+                "type": "caddr_t", 
+                "name": "name"
+            }, 
+            {
+                "type": "socklen_t", 
+                "name": "namelen"
+            }
+        ], 
+        "number": 104, 
+        "funcname": "bind"
+    }, 
+    {
+        "args": [
+            {
+                "type": "int", 
+                "name": "s"
+            }, 
+            {
+                "type": "int", 
+                "name": "level"
+            }, 
+            {
+                "type": "int", 
+                "name": "name"
+            }, 
+            {
+                "type": "caddr_t", 
+                "name": "val"
+            }, 
+            {
+                "type": "socklen_t", 
+                "name": "valsize"
+            }
+        ], 
+        "number": 105, 
+        "funcname": "setsockopt"
+    }, 
+    {
+        "args": [
+            {
+                "type": "int", 
+                "name": "s"
+            }, 
+            {
+                "type": "int", 
+                "name": "backlog"
+            }
+        ], 
+        "number": 106, 
+        "funcname": "listen"
+    }, 
+    {
+        "args": [
+            {
+                "type": "struct timeval *", 
+                "name": "tp"
+            }, 
+            {
+                "type": "struct timezone *", 
+                "name": "tzp"
+            }
+        ], 
+        "number": 116, 
+        "funcname": "gettimeofday"
+    }, 
+    {
+        "args": [
+            {
+                "type": "int", 
+                "name": "who"
+            }, 
+            {
+                "type": "struct rusage *", 
+                "name": "rusage"
+            }
+        ], 
+        "number": 117, 
+        "funcname": "getrusage"
+    }, 
+    {
+        "args": [
+            {
+                "type": "int", 
+                "name": "s"
+            }, 
+            {
+                "type": "int", 
+                "name": "level"
+            }, 
+            {
+                "type": "int", 
+                "name": "name"
+            }, 
+            {
+                "type": "caddr_t", 
+                "name": "val"
+            }, 
+            {
+                "type": "socklen_t *", 
+                "name": "avalsize"
+            }
+        ], 
+        "number": 118, 
+        "funcname": "getsockopt"
+    }, 
+    {
+        "args": [
+            {
+                "type": "int", 
+                "name": "fd"
+            }, 
+            {
+                "type": "struct iovec *", 
+                "name": "iovp"
+            }, 
+            {
+                "type": "u_int", 
+                "name": "iovcnt"
+            }
+        ], 
+        "number": 120, 
+        "funcname": "readv"
+    }, 
+    {
+        "args": [
+            {
+                "type": "int", 
+                "name": "fd"
+            }, 
+            {
+                "type": "struct iovec *", 
+                "name": "iovp"
+            }, 
+            {
+                "type": "u_int", 
+                "name": "iovcnt"
+            }
+        ], 
+        "number": 121, 
+        "funcname": "writev"
+    }, 
+    {
+        "args": [
+            {
+                "type": "struct timeval *", 
+                "name": "tv"
+            }, 
+            {
+                "type": "struct timezone *", 
+                "name": "tzp"
+            }
+        ], 
+        "number": 122, 
+        "funcname": "settimeofday"
+    }, 
+    {
+        "args": [
+            {
+                "type": "int", 
+                "name": "fd"
+            }, 
+            {
+                "type": "int", 
+                "name": "uid"
+            }, 
+            {
+                "type": "int", 
+                "name": "gid"
+            }
+        ], 
+        "number": 123, 
+        "funcname": "fchown"
+    }, 
+    {
+        "args": [
+            {
+                "type": "int", 
+                "name": "fd"
+            }, 
+            {
+                "type": "int", 
+                "name": "mode"
+            }
+        ], 
+        "number": 124, 
+        "funcname": "fchmod"
+    }, 
+    {
+        "args": [
+            {
+                "type": "uid_t", 
+                "name": "ruid"
+            }, 
+            {
+                "type": "uid_t", 
+                "name": "euid"
+            }
+        ], 
+        "number": 126, 
+        "funcname": "setreuid"
+    }, 
+    {
+        "args": [
+            {
+                "type": "gid_t", 
+                "name": "rgid"
+            }, 
+            {
+                "type": "gid_t", 
+                "name": "egid"
+            }
+        ], 
+        "number": 127, 
+        "funcname": "setregid"
+    }, 
+    {
+        "args": [
+            {
+                "type": "char *", 
+                "name": "from"
+            }, 
+            {
+                "type": "char *", 
+                "name": "to"
+            }
+        ], 
+        "number": 128, 
+        "funcname": "rename"
+    }, 
+    {
+        "args": [
+            {
+                "type": "int", 
+                "name": "fd"
+            }, 
+            {
+                "type": "int", 
+                "name": "how"
+            }
+        ], 
+        "number": 131, 
+        "funcname": "flock"
+    }, 
+    {
+        "args": [
+            {
+                "type": "user_addr_t", 
+                "name": "path"
+            }, 
+            {
+                "type": "int", 
+                "name": "mode"
+            }
+        ], 
+        "number": 132, 
+        "funcname": "mkfifo"
+    }, 
+    {
+        "args": [
+            {
+                "type": "int", 
+                "name": "s"
+            }, 
+            {
+                "type": "caddr_t", 
+                "name": "buf"
+            }, 
+            {
+                "type": "size_t", 
+                "name": "len"
+            }, 
+            {
+                "type": "int", 
+                "name": "flags"
+            }, 
+            {
+                "type": "caddr_t", 
+                "name": "to"
+            }, 
+            {
+                "type": "socklen_t", 
+                "name": "tolen"
+            }
+        ], 
+        "number": 133, 
+        "funcname": "sendto"
+    }, 
+    {
+        "args": [
+            {
+                "type": "int", 
+                "name": "s"
+            }, 
+            {
+                "type": "int", 
+                "name": "how"
+            }
+        ], 
+        "number": 134, 
+        "funcname": "shutdown"
+    }, 
+    {
+        "args": [
+            {
+                "type": "int", 
+                "name": "domain"
+            }, 
+            {
+                "type": "int", 
+                "name": "type"
+            }, 
+            {
+                "type": "int", 
+                "name": "protocol"
+            }, 
+            {
+                "type": "int *", 
+                "name": "rsv"
+            }
+        ], 
+        "number": 135, 
+        "funcname": "socketpair"
+    }, 
+    {
+        "args": [
+            {
+                "type": "user_addr_t", 
+                "name": "path"
+            }, 
+            {
+                "type": "int", 
+                "name": "mode"
+            }
+        ], 
+        "number": 136, 
+        "funcname": "mkdir"
+    }, 
+    {
+        "args": [
+            {
+                "type": "char *", 
+                "name": "path"
+            }
+        ], 
+        "number": 137, 
+        "funcname": "rmdir"
+    }, 
+    {
+        "args": [
+            {
+                "type": "char *", 
+                "name": "path"
+            }, 
+            {
+                "type": "struct timeval *", 
+                "name": "tptr"
+            }
+        ], 
+        "number": 138, 
+        "funcname": "utimes"
+    }, 
+    {
+        "args": [
+            {
+                "type": "int", 
+                "name": "fd"
+            }, 
+            {
+                "type": "struct timeval *", 
+                "name": "tptr"
+            }
+        ], 
+        "number": 139, 
+        "funcname": "futimes"
+    }, 
+    {
+        "args": [
+            {
+                "type": "struct timeval *", 
+                "name": "delta"
+            }, 
+            {
+                "type": "struct timeval *", 
+                "name": "olddelta"
+            }
+        ], 
+        "number": 140, 
+        "funcname": "adjtime"
+    }, 
+    {
+        "args": [
+            {
+                "type": "unsigned char *", 
+                "name": "uuid_buf"
+            }, 
+            {
+                "type": "const struct timespec *", 
+                "name": "timeoutp"
+            }, 
+            {
+                "type": "int", 
+                "name": "spi"
+            }
+        ], 
+        "number": 142, 
+        "funcname": "gethostuuid"
+    }, 
+    {
+        "args": [
+            {
+                "type": "pid_t", 
+                "name": "pid"
+            }
+        ], 
+        "number": 151, 
+        "funcname": "getpgid"
+    }, 
+    {
+        "args": [
+            {
+                "type": "int", 
+                "name": "flag"
+            }
+        ], 
+        "number": 152, 
+        "funcname": "setprivexec"
+    }, 
+    {
+        "args": [
+            {
+                "type": "int", 
+                "name": "fd"
+            }, 
+            {
+                "type": "user_addr_t", 
+                "name": "buf"
+            }, 
+            {
+                "type": "user_size_t", 
+                "name": "nbyte"
+            }, 
+            {
+                "type": "off_t", 
+                "name": "offset"
+            }
+        ], 
+        "number": 153, 
+        "funcname": "pread"
+    }, 
+    {
+        "args": [
+            {
+                "type": "int", 
+                "name": "fd"
+            }, 
+            {
+                "type": "user_addr_t", 
+                "name": "buf"
+            }, 
+            {
+                "type": "user_size_t", 
+                "name": "nbyte"
+            }, 
+            {
+                "type": "off_t", 
+                "name": "offset"
+            }
+        ], 
+        "number": 154, 
+        "funcname": "pwrite"
+    }, 
+    {
+        "args": [
+            {
+                "type": "int", 
+                "name": "flag"
+            }, 
+            {
+                "type": "caddr_t", 
+                "name": "argp"
+            }
+        ], 
+        "number": 155, 
+        "funcname": "nfssvc"
+    }, 
+    {
+        "args": [
+            {
+                "type": "char *", 
+                "name": "path"
+            }, 
+            {
+                "type": "struct statfs *", 
+                "name": "buf"
+            }
+        ], 
+        "number": 157, 
+        "funcname": "statfs"
+    }, 
+    {
+        "args": [
+            {
+                "type": "int", 
+                "name": "fd"
+            }, 
+            {
+                "type": "struct statfs *", 
+                "name": "buf"
+            }
+        ], 
+        "number": 158, 
+        "funcname": "fstatfs"
+    }, 
+    {
+        "args": [
+            {
+                "type": "user_addr_t", 
+                "name": "path"
+            }, 
+            {
+                "type": "int", 
+                "name": "flags"
+            }
+        ], 
+        "number": 159, 
+        "funcname": "unmount"
+    }, 
+    {
+        "args": [
+            {
+                "type": "char *", 
+                "name": "fname"
+            }, 
+            {
+                "type": "fhandle_t *", 
+                "name": "fhp"
+            }
+        ], 
+        "number": 161, 
+        "funcname": "getfh"
+    }, 
+    {
+        "args": [
+            {
+                "type": "const char *", 
+                "name": "path"
+            }, 
+            {
+                "type": "int", 
+                "name": "cmd"
+            }, 
+            {
+                "type": "int", 
+                "name": "uid"
+            }, 
+            {
+                "type": "caddr_t", 
+                "name": "arg"
+            }
+        ], 
+        "number": 165, 
+        "funcname": "quotactl"
+    }, 
+    {
+        "args": [
+            {
+                "type": "char *", 
+                "name": "type"
+            }, 
+            {
+                "type": "char *", 
+                "name": "path"
+            }, 
+            {
+                "type": "int", 
+                "name": "flags"
+            }, 
+            {
+                "type": "caddr_t", 
+                "name": "data"
+            }
+        ], 
+        "number": 167, 
+        "funcname": "mount"
+    }, 
+    {
+        "args": [
+            {
+                "type": "pid_t", 
+                "name": "pid"
+            }, 
+            {
+                "type": "uint32_t", 
+                "name": "ops"
+            }, 
+            {
+                "type": "user_addr_t", 
+                "name": "useraddr"
+            }, 
+            {
+                "type": "user_size_t", 
+                "name": "usersize"
+            }
+        ], 
+        "number": 169, 
+        "funcname": "csops"
+    }, 
+    {
+        "args": [
+            {
+                "type": "pid_t", 
+                "name": "pid"
+            }, 
+            {
+                "type": "uint32_t", 
+                "name": "ops"
+            }, 
+            {
+                "type": "user_addr_t", 
+                "name": "useraddr"
+            }, 
+            {
+                "type": "user_size_t", 
+                "name": "usersize"
+            }, 
+            {
+                "type": "user_addr_t", 
+                "name": "uaudittoken"
+            }
+        ], 
+        "number": 170, 
+        "funcname": "csops_audittoken"
+    }, 
+    {
+        "args": [
+            {
+                "type": "idtype_t", 
+                "name": "idtype"
+            }, 
+            {
+                "type": "id_t", 
+                "name": "id"
+            }, 
+            {
+                "type": "siginfo_t *", 
+                "name": "infop"
+            }, 
+            {
+                "type": "int", 
+                "name": "options"
+            }
+        ], 
+        "number": 173, 
+        "funcname": "waitid"
+    }, 
+    {
+        "args": [
+            {
+                "type": "uint32_t", 
+                "name": "debugid"
+            }, 
+            {
+                "type": "uint64_t", 
+                "name": "str_id"
+            }, 
+            {
+                "type": "const char *", 
+                "name": "str"
+            }
+        ], 
+        "number": 178, 
+        "funcname": "kdebug_trace_string"
+    }, 
+    {
+        "args": [
+            {
+                "type": "uint32_t", 
+                "name": "code"
+            }, 
+            {
+                "type": "uint64_t", 
+                "name": "arg1"
+            }, 
+            {
+                "type": "uint64_t", 
+                "name": "arg2"
+            }, 
+            {
+                "type": "uint64_t", 
+                "name": "arg3"
+            }, 
+            {
+                "type": "uint64_t", 
+                "name": "arg4"
+            }
+        ], 
+        "number": 179, 
+        "funcname": "kdebug_trace64"
+    }, 
+    {
+        "args": [
+            {
+                "type": "uint32_t", 
+                "name": "code"
+            }, 
+            {
+                "type": "u_long", 
+                "name": "arg1"
+            }, 
+            {
+                "type": "u_long", 
+                "name": "arg2"
+            }, 
+            {
+                "type": "u_long", 
+                "name": "arg3"
+            }, 
+            {
+                "type": "u_long", 
+                "name": "arg4"
+            }
+        ], 
+        "number": 180, 
+        "funcname": "kdebug_trace"
+    }, 
+    {
+        "args": [
+            {
+                "type": "gid_t", 
+                "name": "gid"
+            }
+        ], 
+        "number": 181, 
+        "funcname": "setgid"
+    }, 
+    {
+        "args": [
+            {
+                "type": "gid_t", 
+                "name": "egid"
+            }
+        ], 
+        "number": 182, 
+        "funcname": "setegid"
+    }, 
+    {
+        "args": [
+            {
+                "type": "uid_t", 
+                "name": "euid"
+            }
+        ], 
+        "number": 183, 
+        "funcname": "seteuid"
+    }, 
+    {
+        "args": [
+            {
+                "type": "struct ucontext *", 
+                "name": "uctx"
+            }, 
+            {
+                "type": "int", 
+                "name": "infostyle"
+            }
+        ], 
+        "number": 184, 
+        "funcname": "sigreturn"
+    }, 
+    {
+        "args": [
+            {
+                "type": "uint64_t", 
+                "name": "code"
+            }, 
+            {
+                "type": "uint64_t", 
+                "name": "arg1"
+            }, 
+            {
+                "type": "uint64_t", 
+                "name": "arg2"
+            }, 
+            {
+                "type": "uint64_t", 
+                "name": "arg3"
+            }, 
+            {
+                "type": "uint64_t", 
+                "name": "arg4"
+            }, 
+            {
+                "type": "uint64_t", 
+                "name": "arg5"
+            }
+        ], 
+        "number": 185, 
+        "funcname": "chud"
+    }, 
+    {
+        "args": [
+            {
+                "type": "int", 
+                "name": "fd"
+            }
+        ], 
+        "number": 187, 
+        "funcname": "fdatasync"
+    }, 
+    {
+        "args": [
+            {
+                "type": "user_addr_t", 
+                "name": "path"
+            }, 
+            {
+                "type": "user_addr_t", 
+                "name": "ub"
+            }
+        ], 
+        "number": 188, 
+        "funcname": "stat"
+    }, 
+    {
+        "args": [
+            {
+                "type": "int", 
+                "name": "fd"
+            }, 
+            {
+                "type": "user_addr_t", 
+                "name": "ub"
+            }
+        ], 
+        "number": 189, 
+        "funcname": "fstat"
+    }, 
+    {
+        "args": [
+            {
+                "type": "user_addr_t", 
+                "name": "path"
+            }, 
+            {
+                "type": "user_addr_t", 
+                "name": "ub"
+            }
+        ], 
+        "number": 190, 
+        "funcname": "lstat"
+    }, 
+    {
+        "args": [
+            {
+                "type": "char *", 
+                "name": "path"
+            }, 
+            {
+                "type": "int", 
+                "name": "name"
+            }
+        ], 
+        "number": 191, 
+        "funcname": "pathconf"
+    }, 
+    {
+        "args": [
+            {
+                "type": "int", 
+                "name": "fd"
+            }, 
+            {
+                "type": "int", 
+                "name": "name"
+            }
+        ], 
+        "number": 192, 
+        "funcname": "fpathconf"
+    }, 
+    {
+        "args": [
+            {
+                "type": "u_int", 
+                "name": "which"
+            }, 
+            {
+                "type": "struct rlimit *", 
+                "name": "rlp"
+            }
+        ], 
+        "number": 194, 
+        "funcname": "getrlimit"
+    }, 
+    {
+        "args": [
+            {
+                "type": "u_int", 
+                "name": "which"
+            }, 
+            {
+                "type": "struct rlimit *", 
+                "name": "rlp"
+            }
+        ], 
+        "number": 195, 
+        "funcname": "setrlimit"
+    }, 
+    {
+        "args": [
+            {
+                "type": "int", 
+                "name": "fd"
+            }, 
+            {
+                "type": "char *", 
+                "name": "buf"
+            }, 
+            {
+                "type": "u_int", 
+                "name": "count"
+            }, 
+            {
+                "type": "long *", 
+                "name": "basep"
+            }
+        ], 
+        "number": 196, 
+        "funcname": "getdirentries"
+    }, 
+    {
+        "args": [
+            {
+                "type": "caddr_t", 
+                "name": "addr"
+            }, 
+            {
+                "type": "size_t", 
+                "name": "len"
+            }, 
+            {
+                "type": "int", 
+                "name": "prot"
+            }, 
+            {
+                "type": "int", 
+                "name": "flags"
+            }, 
+            {
+                "type": "int", 
+                "name": "fd"
+            }, 
+            {
+                "type": "off_t", 
+                "name": "pos"
+            }
+        ], 
+        "number": 197, 
+        "funcname": "mmap"
+    }, 
+    {
+        "args": [
+            {
+                "type": "int", 
+                "name": "fd"
+            }, 
+            {
+                "type": "off_t", 
+                "name": "offset"
+            }, 
+            {
+                "type": "int", 
+                "name": "whence"
+            }
+        ], 
+        "number": 199, 
+        "funcname": "lseek"
+    }, 
+    {
+        "args": [
+            {
+                "type": "char *", 
+                "name": "path"
+            }, 
+            {
+                "type": "off_t", 
+                "name": "length"
+            }
+        ], 
+        "number": 200, 
+        "funcname": "truncate"
+    }, 
+    {
+        "args": [
+            {
+                "type": "int", 
+                "name": "fd"
+            }, 
+            {
+                "type": "off_t", 
+                "name": "length"
+            }
+        ], 
+        "number": 201, 
+        "funcname": "ftruncate"
+    }, 
+    {
+        "args": [
+            {
+                "type": "int *", 
+                "name": "name"
+            }, 
+            {
+                "type": "u_int", 
+                "name": "namelen"
+            }, 
+            {
+                "type": "void *", 
+                "name": "old"
+            }, 
+            {
+                "type": "size_t *", 
+                "name": "oldlenp"
+            }, 
+            {
+                "type": "void *", 
+                "name": "new"
+            }, 
+            {
+                "type": "size_t", 
+                "name": "newlen"
+            }
+        ], 
+        "number": 202, 
+        "funcname": "sysctl"
+    }, 
+    {
+        "args": [
+            {
+                "type": "caddr_t", 
+                "name": "addr"
+            }, 
+            {
+                "type": "size_t", 
+                "name": "len"
+            }
+        ], 
+        "number": 203, 
+        "funcname": "mlock"
+    }, 
+    {
+        "args": [
+            {
+                "type": "caddr_t", 
+                "name": "addr"
+            }, 
+            {
+                "type": "size_t", 
+                "name": "len"
+            }
+        ], 
+        "number": 204, 
+        "funcname": "munlock"
+    }, 
+    {
+        "args": [
+            {
+                "type": "user_addr_t", 
+                "name": "path"
+            }
+        ], 
+        "number": 205, 
+        "funcname": "undelete"
+    }, 
+    {
+        "args": [
+            {
+                "type": "user_addr_t", 
+                "name": "path"
+            }, 
+            {
+                "type": "int", 
+                "name": "flags"
+            }, 
+            {
+                "type": "int", 
+                "name": "class"
+            }, 
+            {
+                "type": "int", 
+                "name": "dpflags"
+            }, 
+            {
+                "type": "int", 
+                "name": "mode"
+            }
+        ], 
+        "number": 216, 
+        "funcname": "open_dprotected_np"
+    }, 
+    {
+        "args": [
+            {
+                "type": "const char *", 
+                "name": "path"
+            }, 
+            {
+                "type": "struct attrlist *", 
+                "name": "alist"
+            }, 
+            {
+                "type": "void *", 
+                "name": "attributeBuffer"
+            }, 
+            {
+                "type": "size_t", 
+                "name": "bufferSize"
+            }, 
+            {
+                "type": "u_long", 
+                "name": "options"
+            }
+        ], 
+        "number": 220, 
+        "funcname": "getattrlist"
+    }, 
+    {
+        "args": [
+            {
+                "type": "const char *", 
+                "name": "path"
+            }, 
+            {
+                "type": "struct attrlist *", 
+                "name": "alist"
+            }, 
+            {
+                "type": "void *", 
+                "name": "attributeBuffer"
+            }, 
+            {
+                "type": "size_t", 
+                "name": "bufferSize"
+            }, 
+            {
+                "type": "u_long", 
+                "name": "options"
+            }
+        ], 
+        "number": 221, 
+        "funcname": "setattrlist"
+    }, 
+    {
+        "args": [
+            {
+                "type": "int", 
+                "name": "fd"
+            }, 
+            {
+                "type": "struct attrlist *", 
+                "name": "alist"
+            }, 
+            {
+                "type": "void *", 
+                "name": "buffer"
+            }, 
+            {
+                "type": "size_t", 
+                "name": "buffersize"
+            }, 
+            {
+                "type": "u_long *", 
+                "name": "count"
+            }, 
+            {
+                "type": "u_long *", 
+                "name": "basep"
+            }, 
+            {
+                "type": "u_long *", 
+                "name": "newstate"
+            }, 
+            {
+                "type": "u_long", 
+                "name": "options"
+            }
+        ], 
+        "number": 222, 
+        "funcname": "getdirentriesattr"
+    }, 
+    {
+        "args": [
+            {
+                "type": "const char *", 
+                "name": "path1"
+            }, 
+            {
+                "type": "const char *", 
+                "name": "path2"
+            }, 
+            {
+                "type": "u_long", 
+                "name": "options"
+            }
+        ], 
+        "number": 223, 
+        "funcname": "exchangedata"
+    }, 
+    {
+        "args": [
+            {
+                "type": "const char *", 
+                "name": "path"
+            }, 
+            {
+                "type": "struct fssearchblock *", 
+                "name": "searchblock"
+            }, 
+            {
+                "type": "uint32_t *", 
+                "name": "nummatches"
+            }, 
+            {
+                "type": "uint32_t", 
+                "name": "scriptcode"
+            }, 
+            {
+                "type": "uint32_t", 
+                "name": "options"
+            }, 
+            {
+                "type": "struct searchstate *", 
+                "name": "state"
+            }
+        ], 
+        "number": 225, 
+        "funcname": "searchfs"
+    }, 
+    {
+        "args": [
+            {
+                "type": "user_addr_t", 
+                "name": "path"
+            }
+        ], 
+        "number": 226, 
+        "funcname": "delete"
+    }, 
+    {
+        "args": [
+            {
+                "type": "char *", 
+                "name": "from"
+            }, 
+            {
+                "type": "char *", 
+                "name": "to"
+            }, 
+            {
+                "type": "int", 
+                "name": "mode"
+            }, 
+            {
+                "type": "int", 
+                "name": "flags"
+            }
+        ], 
+        "number": 227, 
+        "funcname": "copyfile"
+    }, 
+    {
+        "args": [
+            {
+                "type": "int", 
+                "name": "fd"
+            }, 
+            {
+                "type": "struct attrlist *", 
+                "name": "alist"
+            }, 
+            {
+                "type": "void *", 
+                "name": "attributeBuffer"
+            }, 
+            {
+                "type": "size_t", 
+                "name": "bufferSize"
+            }, 
+            {
+                "type": "u_long", 
+                "name": "options"
+            }
+        ], 
+        "number": 228, 
+        "funcname": "fgetattrlist"
+    }, 
+    {
+        "args": [
+            {
+                "type": "int", 
+                "name": "fd"
+            }, 
+            {
+                "type": "struct attrlist *", 
+                "name": "alist"
+            }, 
+            {
+                "type": "void *", 
+                "name": "attributeBuffer"
+            }, 
+            {
+                "type": "size_t", 
+                "name": "bufferSize"
+            }, 
+            {
+                "type": "u_long", 
+                "name": "options"
+            }
+        ], 
+        "number": 229, 
+        "funcname": "fsetattrlist"
+    }, 
+    {
+        "args": [
+            {
+                "type": "struct pollfd *", 
+                "name": "fds"
+            }, 
+            {
+                "type": "u_int", 
+                "name": "nfds"
+            }, 
+            {
+                "type": "int", 
+                "name": "timeout"
+            }
+        ], 
+        "number": 230, 
+        "funcname": "poll"
+    }, 
+    {
+        "args": [
+            {
+                "type": "struct eventreq *", 
+                "name": "u_req"
+            }, 
+            {
+                "type": "int", 
+                "name": "u_eventmask"
+            }
+        ], 
+        "number": 231, 
+        "funcname": "watchevent"
+    }, 
+    {
+        "args": [
+            {
+                "type": "struct eventreq *", 
+                "name": "u_req"
+            }, 
+            {
+                "type": "struct timeval *", 
+                "name": "tv"
+            }
+        ], 
+        "number": 232, 
+        "funcname": "waitevent"
+    }, 
+    {
+        "args": [
+            {
+                "type": "struct eventreq *", 
+                "name": "u_req"
+            }, 
+            {
+                "type": "int", 
+                "name": "u_eventmask"
+            }
+        ], 
+        "number": 233, 
+        "funcname": "modwatch"
+    }, 
+    {
+        "args": [
+            {
+                "type": "user_addr_t", 
+                "name": "path"
+            }, 
+            {
+                "type": "user_addr_t", 
+                "name": "attrname"
+            }, 
+            {
+                "type": "user_addr_t", 
+                "name": "value"
+            }, 
+            {
+                "type": "size_t", 
+                "name": "size"
+            }, 
+            {
+                "type": "uint32_t", 
+                "name": "position"
+            }, 
+            {
+                "type": "int", 
+                "name": "options"
+            }
+        ], 
+        "number": 234, 
+        "funcname": "getxattr"
+    }, 
+    {
+        "args": [
+            {
+                "type": "int", 
+                "name": "fd"
+            }, 
+            {
+                "type": "user_addr_t", 
+                "name": "attrname"
+            }, 
+            {
+                "type": "user_addr_t", 
+                "name": "value"
+            }, 
+            {
+                "type": "size_t", 
+                "name": "size"
+            }, 
+            {
+                "type": "uint32_t", 
+                "name": "position"
+            }, 
+            {
+                "type": "int", 
+                "name": "options"
+            }
+        ], 
+        "number": 235, 
+        "funcname": "fgetxattr"
+    }, 
+    {
+        "args": [
+            {
+                "type": "user_addr_t", 
+                "name": "path"
+            }, 
+            {
+                "type": "user_addr_t", 
+                "name": "attrname"
+            }, 
+            {
+                "type": "user_addr_t", 
+                "name": "value"
+            }, 
+            {
+                "type": "size_t", 
+                "name": "size"
+            }, 
+            {
+                "type": "uint32_t", 
+                "name": "position"
+            }, 
+            {
+                "type": "int", 
+                "name": "options"
+            }
+        ], 
+        "number": 236, 
+        "funcname": "setxattr"
+    }, 
+    {
+        "args": [
+            {
+                "type": "int", 
+                "name": "fd"
+            }, 
+            {
+                "type": "user_addr_t", 
+                "name": "attrname"
+            }, 
+            {
+                "type": "user_addr_t", 
+                "name": "value"
+            }, 
+            {
+                "type": "size_t", 
+                "name": "size"
+            }, 
+            {
+                "type": "uint32_t", 
+                "name": "position"
+            }, 
+            {
+                "type": "int", 
+                "name": "options"
+            }
+        ], 
+        "number": 237, 
+        "funcname": "fsetxattr"
+    }, 
+    {
+        "args": [
+            {
+                "type": "user_addr_t", 
+                "name": "path"
+            }, 
+            {
+                "type": "user_addr_t", 
+                "name": "attrname"
+            }, 
+            {
+                "type": "int", 
+                "name": "options"
+            }
+        ], 
+        "number": 238, 
+        "funcname": "removexattr"
+    }, 
+    {
+        "args": [
+            {
+                "type": "int", 
+                "name": "fd"
+            }, 
+            {
+                "type": "user_addr_t", 
+                "name": "attrname"
+            }, 
+            {
+                "type": "int", 
+                "name": "options"
+            }
+        ], 
+        "number": 239, 
+        "funcname": "fremovexattr"
+    }, 
+    {
+        "args": [
+            {
+                "type": "user_addr_t", 
+                "name": "path"
+            }, 
+            {
+                "type": "user_addr_t", 
+                "name": "namebuf"
+            }, 
+            {
+                "type": "size_t", 
+                "name": "bufsize"
+            }, 
+            {
+                "type": "int", 
+                "name": "options"
+            }
+        ], 
+        "number": 240, 
+        "funcname": "listxattr"
+    }, 
+    {
+        "args": [
+            {
+                "type": "int", 
+                "name": "fd"
+            }, 
+            {
+                "type": "user_addr_t", 
+                "name": "namebuf"
+            }, 
+            {
+                "type": "size_t", 
+                "name": "bufsize"
+            }, 
+            {
+                "type": "int", 
+                "name": "options"
+            }
+        ], 
+        "number": 241, 
+        "funcname": "flistxattr"
+    }, 
+    {
+        "args": [
+            {
+                "type": "const char *", 
+                "name": "path"
+            }, 
+            {
+                "type": "u_long", 
+                "name": "cmd"
+            }, 
+            {
+                "type": "caddr_t", 
+                "name": "data"
+            }, 
+            {
+                "type": "u_int", 
+                "name": "options"
+            }
+        ], 
+        "number": 242, 
+        "funcname": "fsctl"
+    }, 
+    {
+        "args": [
+            {
+                "type": "u_int", 
+                "name": "gidsetsize"
+            }, 
+            {
+                "type": "gid_t *", 
+                "name": "gidset"
+            }, 
+            {
+                "type": "int", 
+                "name": "gmuid"
+            }
+        ], 
+        "number": 243, 
+        "funcname": "initgroups"
+    }, 
+    {
+        "args": [
+            {
+                "type": "pid_t *", 
+                "name": "pid"
+            }, 
+            {
+                "type": "const char *", 
+                "name": "path"
+            }, 
+            {
+                "type": "const struct _posix_spawn_args_desc *", 
+                "name": "adesc"
+            }, 
+            {
+                "type": "char **", 
+                "name": "argv"
+            }, 
+            {
+                "type": "char **", 
+                "name": "envp"
+            }
+        ], 
+        "number": 244, 
+        "funcname": "posix_spawn"
+    }, 
+    {
+        "args": [
+            {
+                "type": "int", 
+                "name": "fd"
+            }, 
+            {
+                "type": "u_long", 
+                "name": "cmd"
+            }, 
+            {
+                "type": "caddr_t", 
+                "name": "data"
+            }, 
+            {
+                "type": "u_int", 
+                "name": "options"
+            }
+        ], 
+        "number": 245, 
+        "funcname": "ffsctl"
+    }, 
+    {
+        "args": [
+            {
+                "type": "int", 
+                "name": "flag"
+            }, 
+            {
+                "type": "caddr_t", 
+                "name": "argp"
+            }
+        ], 
+        "number": 247, 
+        "funcname": "nfsclnt"
+    }, 
+    {
+        "args": [
+            {
+                "type": "const struct fhandle *", 
+                "name": "u_fhp"
+            }, 
+            {
+                "type": "int", 
+                "name": "flags"
+            }
+        ], 
+        "number": 248, 
+        "funcname": "fhopen"
+    }, 
+    {
+        "args": [
+            {
+                "type": "void *", 
+                "name": "addr"
+            }, 
+            {
+                "type": "size_t", 
+                "name": "len"
+            }, 
+            {
+                "type": "int", 
+                "name": "inherit"
+            }
+        ], 
+        "number": 250, 
+        "funcname": "minherit"
+    }, 
+    {
+        "args": [
+            {
+                "type": "u_int", 
+                "name": "which"
+            }, 
+            {
+                "type": "int", 
+                "name": "a2"
+            }, 
+            {
+                "type": "int", 
+                "name": "a3"
+            }, 
+            {
+                "type": "int", 
+                "name": "a4"
+            }, 
+            {
+                "type": "int", 
+                "name": "a5"
+            }
+        ], 
+        "number": 251, 
+        "funcname": "semsys"
+    }, 
+    {
+        "args": [
+            {
+                "type": "u_int", 
+                "name": "which"
+            }, 
+            {
+                "type": "int", 
+                "name": "a2"
+            }, 
+            {
+                "type": "int", 
+                "name": "a3"
+            }, 
+            {
+                "type": "int", 
+                "name": "a4"
+            }, 
+            {
+                "type": "int", 
+                "name": "a5"
+            }
+        ], 
+        "number": 252, 
+        "funcname": "msgsys"
+    }, 
+    {
+        "args": [
+            {
+                "type": "u_int", 
+                "name": "which"
+            }, 
+            {
+                "type": "int", 
+                "name": "a2"
+            }, 
+            {
+                "type": "int", 
+                "name": "a3"
+            }, 
+            {
+                "type": "int", 
+                "name": "a4"
+            }
+        ], 
+        "number": 253, 
+        "funcname": "shmsys"
+    }, 
+    {
+        "args": [
+            {
+                "type": "int", 
+                "name": "semid"
+            }, 
+            {
+                "type": "int", 
+                "name": "semnum"
+            }, 
+            {
+                "type": "int", 
+                "name": "cmd"
+            }, 
+            {
+                "type": "semun_t", 
+                "name": "arg"
+            }
+        ], 
+        "number": 254, 
+        "funcname": "semctl"
+    }, 
+    {
+        "args": [
+            {
+                "type": "key_t", 
+                "name": "key"
+            }, 
+            {
+                "type": "int", 
+                "name": "nsems"
+            }, 
+            {
+                "type": "int", 
+                "name": "semflg"
+            }
+        ], 
+        "number": 255, 
+        "funcname": "semget"
+    }, 
+    {
+        "args": [
+            {
+                "type": "int", 
+                "name": "semid"
+            }, 
+            {
+                "type": "struct sembuf *", 
+                "name": "sops"
+            }, 
+            {
+                "type": "int", 
+                "name": "nsops"
+            }
+        ], 
+        "number": 256, 
+        "funcname": "semop"
+    }, 
+    {
+        "args": [
+            {
+                "type": "int", 
+                "name": "msqid"
+            }, 
+            {
+                "type": "int", 
+                "name": "cmd"
+            }, 
+            {
+                "type": "struct msqid_ds *", 
+                "name": "buf"
+            }
+        ], 
+        "number": 258, 
+        "funcname": "msgctl"
+    }, 
+    {
+        "args": [
+            {
+                "type": "key_t", 
+                "name": "key"
+            }, 
+            {
+                "type": "int", 
+                "name": "msgflg"
+            }
+        ], 
+        "number": 259, 
+        "funcname": "msgget"
+    }, 
+    {
+        "args": [
+            {
+                "type": "int", 
+                "name": "msqid"
+            }, 
+            {
+                "type": "void *", 
+                "name": "msgp"
+            }, 
+            {
+                "type": "size_t", 
+                "name": "msgsz"
+            }, 
+            {
+                "type": "int", 
+                "name": "msgflg"
+            }
+        ], 
+        "number": 260, 
+        "funcname": "msgsnd"
+    }, 
+    {
+        "args": [
+            {
+                "type": "int", 
+                "name": "msqid"
+            }, 
+            {
+                "type": "void *", 
+                "name": "msgp"
+            }, 
+            {
+                "type": "size_t", 
+                "name": "msgsz"
+            }, 
+            {
+                "type": "long", 
+                "name": "msgtyp"
+            }, 
+            {
+                "type": "int", 
+                "name": "msgflg"
+            }
+        ], 
+        "number": 261, 
+        "funcname": "msgrcv"
+    }, 
+    {
+        "args": [
+            {
+                "type": "int", 
+                "name": "shmid"
+            }, 
+            {
+                "type": "void *", 
+                "name": "shmaddr"
+            }, 
+            {
+                "type": "int", 
+                "name": "shmflg"
+            }
+        ], 
+        "number": 262, 
+        "funcname": "shmat"
+    }, 
+    {
+        "args": [
+            {
+                "type": "int", 
+                "name": "shmid"
+            }, 
+            {
+                "type": "int", 
+                "name": "cmd"
+            }, 
+            {
+                "type": "struct shmid_ds *", 
+                "name": "buf"
+            }
+        ], 
+        "number": 263, 
+        "funcname": "shmctl"
+    }, 
+    {
+        "args": [
+            {
+                "type": "void *", 
+                "name": "shmaddr"
+            }
+        ], 
+        "number": 264, 
+        "funcname": "shmdt"
+    }, 
+    {
+        "args": [
+            {
+                "type": "key_t", 
+                "name": "key"
+            }, 
+            {
+                "type": "size_t", 
+                "name": "size"
+            }, 
+            {
+                "type": "int", 
+                "name": "shmflg"
+            }
+        ], 
+        "number": 265, 
+        "funcname": "shmget"
+    }, 
+    {
+        "args": [
+            {
+                "type": "const char *", 
+                "name": "name"
+            }, 
+            {
+                "type": "int", 
+                "name": "oflag"
+            }, 
+            {
+                "type": "int", 
+                "name": "mode"
+            }
+        ], 
+        "number": 266, 
+        "funcname": "shm_open"
+    }, 
+    {
+        "args": [
+            {
+                "type": "const char *", 
+                "name": "name"
+            }
+        ], 
+        "number": 267, 
+        "funcname": "shm_unlink"
+    }, 
+    {
+        "args": [
+            {
+                "type": "const char *", 
+                "name": "name"
+            }, 
+            {
+                "type": "int", 
+                "name": "oflag"
+            }, 
+            {
+                "type": "int", 
+                "name": "mode"
+            }, 
+            {
+                "type": "int", 
+                "name": "value"
+            }
+        ], 
+        "number": 268, 
+        "funcname": "sem_open"
+    }, 
+    {
+        "args": [
+            {
+                "type": "sem_t *", 
+                "name": "sem"
+            }
+        ], 
+        "number": 269, 
+        "funcname": "sem_close"
+    }, 
+    {
+        "args": [
+            {
+                "type": "const char *", 
+                "name": "name"
+            }
+        ], 
+        "number": 270, 
+        "funcname": "sem_unlink"
+    }, 
+    {
+        "args": [
+            {
+                "type": "sem_t *", 
+                "name": "sem"
+            }
+        ], 
+        "number": 271, 
+        "funcname": "sem_wait"
+    }, 
+    {
+        "args": [
+            {
+                "type": "sem_t *", 
+                "name": "sem"
+            }
+        ], 
+        "number": 272, 
+        "funcname": "sem_trywait"
+    }, 
+    {
+        "args": [
+            {
+                "type": "sem_t *", 
+                "name": "sem"
+            }
+        ], 
+        "number": 273, 
+        "funcname": "sem_post"
+    }, 
+    {
+        "args": [
+            {
+                "type": "const char *", 
+                "name": "name"
+            }, 
+            {
+                "type": "size_t", 
+                "name": "namelen"
+            }, 
+            {
+                "type": "void *", 
+                "name": "old"
+            }, 
+            {
+                "type": "size_t *", 
+                "name": "oldlenp"
+            }, 
+            {
+                "type": "void *", 
+                "name": "new"
+            }, 
+            {
+                "type": "size_t", 
+                "name": "newlen"
+            }
+        ], 
+        "number": 274, 
+        "funcname": "sysctlbyname"
+    }, 
+    {
+        "args": [
+            {
+                "type": "user_addr_t", 
+                "name": "path"
+            }, 
+            {
+                "type": "int", 
+                "name": "flags"
+            }, 
+            {
+                "type": "uid_t", 
+                "name": "uid"
+            }, 
+            {
+                "type": "gid_t", 
+                "name": "gid"
+            }, 
+            {
+                "type": "int", 
+                "name": "mode"
+            }, 
+            {
+                "type": "user_addr_t", 
+                "name": "xsecurity"
+            }
+        ], 
+        "number": 277, 
+        "funcname": "open_extended"
+    }, 
+    {
+        "args": [
+            {
+                "type": "int", 
+                "name": "newmask"
+            }, 
+            {
+                "type": "user_addr_t", 
+                "name": "xsecurity"
+            }
+        ], 
+        "number": 278, 
+        "funcname": "umask_extended"
+    }, 
+    {
+        "args": [
+            {
+                "type": "user_addr_t", 
+                "name": "path"
+            }, 
+            {
+                "type": "user_addr_t", 
+                "name": "ub"
+            }, 
+            {
+                "type": "user_addr_t", 
+                "name": "xsecurity"
+            }, 
+            {
+                "type": "user_addr_t", 
+                "name": "xsecurity_size"
+            }
+        ], 
+        "number": 279, 
+        "funcname": "stat_extended"
+    }, 
+    {
+        "args": [
+            {
+                "type": "user_addr_t", 
+                "name": "path"
+            }, 
+            {
+                "type": "user_addr_t", 
+                "name": "ub"
+            }, 
+            {
+                "type": "user_addr_t", 
+                "name": "xsecurity"
+            }, 
+            {
+                "type": "user_addr_t", 
+                "name": "xsecurity_size"
+            }
+        ], 
+        "number": 280, 
+        "funcname": "lstat_extended"
+    }, 
+    {
+        "args": [
+            {
+                "type": "int", 
+                "name": "fd"
+            }, 
+            {
+                "type": "user_addr_t", 
+                "name": "ub"
+            }, 
+            {
+                "type": "user_addr_t", 
+                "name": "xsecurity"
+            }, 
+            {
+                "type": "user_addr_t", 
+                "name": "xsecurity_size"
+            }
+        ], 
+        "number": 281, 
+        "funcname": "fstat_extended"
+    }, 
+    {
+        "args": [
+            {
+                "type": "user_addr_t", 
+                "name": "path"
+            }, 
+            {
+                "type": "uid_t", 
+                "name": "uid"
+            }, 
+            {
+                "type": "gid_t", 
+                "name": "gid"
+            }, 
+            {
+                "type": "int", 
+                "name": "mode"
+            }, 
+            {
+                "type": "user_addr_t", 
+                "name": "xsecurity"
+            }
+        ], 
+        "number": 282, 
+        "funcname": "chmod_extended"
+    }, 
+    {
+        "args": [
+            {
+                "type": "int", 
+                "name": "fd"
+            }, 
+            {
+                "type": "uid_t", 
+                "name": "uid"
+            }, 
+            {
+                "type": "gid_t", 
+                "name": "gid"
+            }, 
+            {
+                "type": "int", 
+                "name": "mode"
+            }, 
+            {
+                "type": "user_addr_t", 
+                "name": "xsecurity"
+            }
+        ], 
+        "number": 283, 
+        "funcname": "fchmod_extended"
+    }, 
+    {
+        "args": [
+            {
+                "type": "user_addr_t", 
+                "name": "entries"
+            }, 
+            {
+                "type": "size_t", 
+                "name": "size"
+            }, 
+            {
+                "type": "user_addr_t", 
+                "name": "results"
+            }, 
+            {
+                "type": "uid_t", 
+                "name": "uid"
+            }
+        ], 
+        "number": 284, 
+        "funcname": "access_extended"
+    }, 
+    {
+        "args": [
+            {
+                "type": "uid_t", 
+                "name": "uid"
+            }, 
+            {
+                "type": "gid_t", 
+                "name": "gid"
+            }
+        ], 
+        "number": 285, 
+        "funcname": "settid"
+    }, 
+    {
+        "args": [
+            {
+                "type": "uid_t *", 
+                "name": "uidp"
+            }, 
+            {
+                "type": "gid_t *", 
+                "name": "gidp"
+            }
+        ], 
+        "number": 286, 
+        "funcname": "gettid"
+    }, 
+    {
+        "args": [
+            {
+                "type": "int", 
+                "name": "setlen"
+            }, 
+            {
+                "type": "user_addr_t", 
+                "name": "guidset"
+            }
+        ], 
+        "number": 287, 
+        "funcname": "setsgroups"
+    }, 
+    {
+        "args": [
+            {
+                "type": "user_addr_t", 
+                "name": "setlen"
+            }, 
+            {
+                "type": "user_addr_t", 
+                "name": "guidset"
+            }
+        ], 
+        "number": 288, 
+        "funcname": "getsgroups"
+    }, 
+    {
+        "args": [
+            {
+                "type": "int", 
+                "name": "setlen"
+            }, 
+            {
+                "type": "user_addr_t", 
+                "name": "guidset"
+            }
+        ], 
+        "number": 289, 
+        "funcname": "setwgroups"
+    }, 
+    {
+        "args": [
+            {
+                "type": "user_addr_t", 
+                "name": "setlen"
+            }, 
+            {
+                "type": "user_addr_t", 
+                "name": "guidset"
+            }
+        ], 
+        "number": 290, 
+        "funcname": "getwgroups"
+    }, 
+    {
+        "args": [
+            {
+                "type": "user_addr_t", 
+                "name": "path"
+            }, 
+            {
+                "type": "uid_t", 
+                "name": "uid"
+            }, 
+            {
+                "type": "gid_t", 
+                "name": "gid"
+            }, 
+            {
+                "type": "int", 
+                "name": "mode"
+            }, 
+            {
+                "type": "user_addr_t", 
+                "name": "xsecurity"
+            }
+        ], 
+        "number": 291, 
+        "funcname": "mkfifo_extended"
+    }, 
+    {
+        "args": [
+            {
+                "type": "user_addr_t", 
+                "name": "path"
+            }, 
+            {
+                "type": "uid_t", 
+                "name": "uid"
+            }, 
+            {
+                "type": "gid_t", 
+                "name": "gid"
+            }, 
+            {
+                "type": "int", 
+                "name": "mode"
+            }, 
+            {
+                "type": "user_addr_t", 
+                "name": "xsecurity"
+            }
+        ], 
+        "number": 292, 
+        "funcname": "mkdir_extended"
+    }, 
+    {
+        "args": [
+            {
+                "type": "int", 
+                "name": "opcode"
+            }, 
+            {
+                "type": "user_addr_t", 
+                "name": "message"
+            }
+        ], 
+        "number": 293, 
+        "funcname": "identitysvc"
+    }, 
+    {
+        "args": [
+            {
+                "type": "uint64_t *", 
+                "name": "start_address"
+            }
+        ], 
+        "number": 294, 
+        "funcname": "shared_region_check_np"
+    }, 
+    {
+        "args": [
+            {
+                "type": "user_addr_t", 
+                "name": "rwlock"
+            }, 
+            {
+                "type": "uint32_t", 
+                "name": "lgenval"
+            }, 
+            {
+                "type": "uint32_t", 
+                "name": "ugenval"
+            }, 
+            {
+                "type": "uint32_t", 
+                "name": "rw_wc"
+            }, 
+            {
+                "type": "int", 
+                "name": "flags"
+            }
+        ], 
+        "number": 297, 
+        "funcname": "psynch_rw_longrdlock"
+    }, 
+    {
+        "args": [
+            {
+                "type": "user_addr_t", 
+                "name": "rwlock"
+            }, 
+            {
+                "type": "uint32_t", 
+                "name": "lgenval"
+            }, 
+            {
+                "type": "uint32_t", 
+                "name": "ugenval"
+            }, 
+            {
+                "type": "uint32_t", 
+                "name": "rw_wc"
+            }, 
+            {
+                "type": "int", 
+                "name": "flags"
+            }
+        ], 
+        "number": 298, 
+        "funcname": "psynch_rw_yieldwrlock"
+    }, 
+    {
+        "args": [
+            {
+                "type": "user_addr_t", 
+                "name": "rwlock"
+            }, 
+            {
+                "type": "uint32_t", 
+                "name": "lgenval"
+            }, 
+            {
+                "type": "uint32_t", 
+                "name": "ugenval"
+            }, 
+            {
+                "type": "uint32_t", 
+                "name": "rw_wc"
+            }, 
+            {
+                "type": "int", 
+                "name": "flags"
+            }
+        ], 
+        "number": 299, 
+        "funcname": "psynch_rw_downgrade"
+    }, 
+    {
+        "args": [
+            {
+                "type": "user_addr_t", 
+                "name": "rwlock"
+            }, 
+            {
+                "type": "uint32_t", 
+                "name": "lgenval"
+            }, 
+            {
+                "type": "uint32_t", 
+                "name": "ugenval"
+            }, 
+            {
+                "type": "uint32_t", 
+                "name": "rw_wc"
+            }, 
+            {
+                "type": "int", 
+                "name": "flags"
+            }
+        ], 
+        "number": 300, 
+        "funcname": "psynch_rw_upgrade"
+    }, 
+    {
+        "args": [
+            {
+                "type": "user_addr_t", 
+                "name": "mutex"
+            }, 
+            {
+                "type": "uint32_t", 
+                "name": "mgen"
+            }, 
+            {
+                "type": "uint32_t", 
+                "name": "ugen"
+            }, 
+            {
+                "type": "uint64_t", 
+                "name": "tid"
+            }, 
+            {
+                "type": "uint32_t", 
+                "name": "flags"
+            }
+        ], 
+        "number": 302, 
+        "funcname": "psynch_mutexdrop"
+    }, 
+    {
+        "args": [
+            {
+                "type": "user_addr_t", 
+                "name": "cv"
+            }, 
+            {
+                "type": "uint64_t", 
+                "name": "cvlsgen"
+            }, 
+            {
+                "type": "uint64_t", 
+                "name": "cvudgen"
+            }, 
+            {
+                "type": "uint32_t", 
+                "name": "flags"
+            }, 
+            {
+                "type": "user_addr_t", 
+                "name": "mutex"
+            }, 
+            {
+                "type": "uint64_t", 
+                "name": "mugen"
+            }, 
+            {
+                "type": "uint64_t", 
+                "name": "tid"
+            }
+        ], 
+        "number": 303, 
+        "funcname": "psynch_cvbroad"
+    }, 
+    {
+        "args": [
+            {
+                "type": "user_addr_t", 
+                "name": "cv"
+            }, 
+            {
+                "type": "uint64_t", 
+                "name": "cvlsgen"
+            }, 
+            {
+                "type": "uint32_t", 
+                "name": "cvugen"
+            }, 
+            {
+                "type": "int", 
+                "name": "thread_port"
+            }, 
+            {
+                "type": "user_addr_t", 
+                "name": "mutex"
+            }, 
+            {
+                "type": "uint64_t", 
+                "name": "mugen"
+            }, 
+            {
+                "type": "uint64_t", 
+                "name": "tid"
+            }, 
+            {
+                "type": "uint32_t", 
+                "name": "flags"
+            }
+        ], 
+        "number": 304, 
+        "funcname": "psynch_cvsignal"
+    }, 
+    {
+        "args": [
+            {
+                "type": "user_addr_t", 
+                "name": "rwlock"
+            }, 
+            {
+                "type": "uint32_t", 
+                "name": "lgenval"
+            }, 
+            {
+                "type": "uint32_t", 
+                "name": "ugenval"
+            }, 
+            {
+                "type": "uint32_t", 
+                "name": "rw_wc"
+            }, 
+            {
+                "type": "int", 
+                "name": "flags"
+            }
+        ], 
+        "number": 308, 
+        "funcname": "psynch_rw_unlock"
+    }, 
+    {
+        "args": [
+            {
+                "type": "user_addr_t", 
+                "name": "rwlock"
+            }, 
+            {
+                "type": "uint32_t", 
+                "name": "lgenval"
+            }, 
+            {
+                "type": "uint32_t", 
+                "name": "ugenval"
+            }, 
+            {
+                "type": "uint32_t", 
+                "name": "rw_wc"
+            }, 
+            {
+                "type": "int", 
+                "name": "flags"
+            }
+        ], 
+        "number": 309, 
+        "funcname": "psynch_rw_unlock2"
+    }, 
+    {
+        "args": [
+            {
+                "type": "pid_t", 
+                "name": "pid"
+            }
+        ], 
+        "number": 310, 
+        "funcname": "getsid"
+    }, 
+    {
+        "args": [
+            {
+                "type": "pid_t", 
+                "name": "pid"
+            }, 
+            {
+                "type": "int", 
+                "name": "assume"
+            }
+        ], 
+        "number": 311, 
+        "funcname": "settid_with_pid"
+    }, 
+    {
+        "args": [
+            {
+                "type": "user_addr_t", 
+                "name": "cv"
+            }, 
+            {
+                "type": "uint32_t", 
+                "name": "cvgen"
+            }, 
+            {
+                "type": "uint32_t", 
+                "name": "cvugen"
+            }, 
+            {
+                "type": "uint32_t", 
+                "name": "cvsgen"
+            }, 
+            {
+                "type": "uint32_t", 
+                "name": "prepocnt"
+            }, 
+            {
+                "type": "uint32_t", 
+                "name": "preposeq"
+            }, 
+            {
+                "type": "uint32_t", 
+                "name": "flags"
+            }
+        ], 
+        "number": 312, 
+        "funcname": "psynch_cvclrprepost"
+    }, 
+    {
+        "args": [
+            {
+                "type": "int", 
+                "name": "op"
+            }, 
+            {
+                "type": "user_addr_t", 
+                "name": "aiocbp"
+            }
+        ], 
+        "number": 313, 
+        "funcname": "aio_fsync"
+    }, 
+    {
+        "args": [
+            {
+                "type": "user_addr_t", 
+                "name": "aiocbp"
+            }
+        ], 
+        "number": 314, 
+        "funcname": "aio_return"
+    }, 
+    {
+        "args": [
+            {
+                "type": "user_addr_t", 
+                "name": "aiocblist"
+            }, 
+            {
+                "type": "int", 
+                "name": "nent"
+            }, 
+            {
+                "type": "user_addr_t", 
+                "name": "timeoutp"
+            }
+        ], 
+        "number": 315, 
+        "funcname": "aio_suspend"
+    }, 
+    {
+        "args": [
+            {
+                "type": "int", 
+                "name": "fd"
+            }, 
+            {
+                "type": "user_addr_t", 
+                "name": "aiocbp"
+            }
+        ], 
+        "number": 316, 
+        "funcname": "aio_cancel"
+    }, 
+    {
+        "args": [
+            {
+                "type": "user_addr_t", 
+                "name": "aiocbp"
+            }
+        ], 
+        "number": 317, 
+        "funcname": "aio_error"
+    }, 
+    {
+        "args": [
+            {
+                "type": "user_addr_t", 
+                "name": "aiocbp"
+            }
+        ], 
+        "number": 318, 
+        "funcname": "aio_read"
+    }, 
+    {
+        "args": [
+            {
+                "type": "user_addr_t", 
+                "name": "aiocbp"
+            }
+        ], 
+        "number": 319, 
+        "funcname": "aio_write"
+    }, 
+    {
+        "args": [
+            {
+                "type": "int", 
+                "name": "mode"
+            }, 
+            {
+                "type": "user_addr_t", 
+                "name": "aiocblist"
+            }, 
+            {
+                "type": "int", 
+                "name": "nent"
+            }, 
+            {
+                "type": "user_addr_t", 
+                "name": "sigp"
+            }
+        ], 
+        "number": 320, 
+        "funcname": "lio_listio"
+    }, 
+    {
+        "args": [
+            {
+                "type": "int", 
+                "name": "cmd"
+            }, 
+            {
+                "type": "void *", 
+                "name": "arg"
+            }
+        ], 
+        "number": 322, 
+        "funcname": "iopolicysys"
+    }, 
+    {
+        "args": [
+            {
+                "type": "int", 
+                "name": "scope"
+            }, 
+            {
+                "type": "int", 
+                "name": "action"
+            }, 
+            {
+                "type": "int", 
+                "name": "policy"
+            }, 
+            {
+                "type": "int", 
+                "name": "policy_subtype"
+            }, 
+            {
+                "type": "user_addr_t", 
+                "name": "attrp"
+            }, 
+            {
+                "type": "pid_t", 
+                "name": "target_pid"
+            }, 
+            {
+                "type": "uint64_t", 
+                "name": "target_threadid"
+            }
+        ], 
+        "number": 323, 
+        "funcname": "process_policy"
+    }, 
+    {
+        "args": [
+            {
+                "type": "int", 
+                "name": "how"
+            }
+        ], 
+        "number": 324, 
+        "funcname": "mlockall"
+    }, 
+    {
+        "args": [
+            {
+                "type": "int", 
+                "name": "how"
+            }
+        ], 
+        "number": 325, 
+        "funcname": "munlockall"
+    }, 
+    {
+        "args": [
+            {
+                "type": "int", 
+                "name": "thread_port"
+            }, 
+            {
+                "type": "int", 
+                "name": "sig"
+            }
+        ], 
+        "number": 328, 
+        "funcname": "__pthread_kill"
+    }, 
+    {
+        "args": [
+            {
+                "type": "int", 
+                "name": "how"
+            }, 
+            {
+                "type": "user_addr_t", 
+                "name": "set"
+            }, 
+            {
+                "type": "user_addr_t", 
+                "name": "oset"
+            }
+        ], 
+        "number": 329, 
+        "funcname": "__pthread_sigmask"
+    }, 
+    {
+        "args": [
+            {
+                "type": "user_addr_t", 
+                "name": "set"
+            }, 
+            {
+                "type": "user_addr_t", 
+                "name": "sig"
+            }
+        ], 
+        "number": 330, 
+        "funcname": "__sigwait"
+    }, 
+    {
+        "args": [
+            {
+                "type": "int", 
+                "name": "value"
+            }
+        ], 
+        "number": 331, 
+        "funcname": "__disable_threadsignal"
+    }, 
+    {
+        "args": [
+            {
+                "type": "int", 
+                "name": "thread_port"
+            }
+        ], 
+        "number": 332, 
+        "funcname": "__pthread_markcancel"
+    }, 
+    {
+        "args": [
+            {
+                "type": "int", 
+                "name": "action"
+            }
+        ], 
+        "number": 333, 
+        "funcname": "__pthread_canceled"
+    }, 
+    {
+        "args": [
+            {
+                "type": "int", 
+                "name": "cond_sem"
+            }, 
+            {
+                "type": "int", 
+                "name": "mutex_sem"
+            }, 
+            {
+                "type": "int", 
+                "name": "timeout"
+            }, 
+            {
+                "type": "int", 
+                "name": "relative"
+            }, 
+            {
+                "type": "int64_t", 
+                "name": "tv_sec"
+            }, 
+            {
+                "type": "int32_t", 
+                "name": "tv_nsec"
+            }
+        ], 
+        "number": 334, 
+        "funcname": "__semwait_signal"
+    }, 
+    {
+        "args": [
+            {
+                "type": "int32_t", 
+                "name": "callnum"
+            }, 
+            {
+                "type": "int32_t", 
+                "name": "pid"
+            }, 
+            {
+                "type": "uint32_t", 
+                "name": "flavor"
+            }, 
+            {
+                "type": "uint64_t", 
+                "name": "arg"
+            }, 
+            {
+                "type": "user_addr_t", 
+                "name": "buffer"
+            }, 
+            {
+                "type": "int32_t", 
+                "name": "buffersize"
+            }
+        ], 
+        "number": 336, 
+        "funcname": "proc_info"
+    }, 
+    {
+        "args": [
+            {
+                "type": "int", 
+                "name": "fd"
+            }, 
+            {
+                "type": "int", 
+                "name": "s"
+            }, 
+            {
+                "type": "off_t", 
+                "name": "offset"
+            }, 
+            {
+                "type": "off_t *", 
+                "name": "nbytes"
+            }, 
+            {
+                "type": "struct sf_hdtr *", 
+                "name": "hdtr"
+            }, 
+            {
+                "type": "int", 
+                "name": "flags"
+            }
+        ], 
+        "number": 337, 
+        "funcname": "sendfile"
+    }, 
+    {
+        "args": [
+            {
+                "type": "user_addr_t", 
+                "name": "path"
+            }, 
+            {
+                "type": "user_addr_t", 
+                "name": "ub"
+            }
+        ], 
+        "number": 338, 
+        "funcname": "stat64"
+    }, 
+    {
+        "args": [
+            {
+                "type": "int", 
+                "name": "fd"
+            }, 
+            {
+                "type": "user_addr_t", 
+                "name": "ub"
+            }
+        ], 
+        "number": 339, 
+        "funcname": "fstat64"
+    }, 
+    {
+        "args": [
+            {
+                "type": "user_addr_t", 
+                "name": "path"
+            }, 
+            {
+                "type": "user_addr_t", 
+                "name": "ub"
+            }
+        ], 
+        "number": 340, 
+        "funcname": "lstat64"
+    }, 
+    {
+        "args": [
+            {
+                "type": "user_addr_t", 
+                "name": "path"
+            }, 
+            {
+                "type": "user_addr_t", 
+                "name": "ub"
+            }, 
+            {
+                "type": "user_addr_t", 
+                "name": "xsecurity"
+            }, 
+            {
+                "type": "user_addr_t", 
+                "name": "xsecurity_size"
+            }
+        ], 
+        "number": 341, 
+        "funcname": "stat64_extended"
+    }, 
+    {
+        "args": [
+            {
+                "type": "user_addr_t", 
+                "name": "path"
+            }, 
+            {
+                "type": "user_addr_t", 
+                "name": "ub"
+            }, 
+            {
+                "type": "user_addr_t", 
+                "name": "xsecurity"
+            }, 
+            {
+                "type": "user_addr_t", 
+                "name": "xsecurity_size"
+            }
+        ], 
+        "number": 342, 
+        "funcname": "lstat64_extended"
+    }, 
+    {
+        "args": [
+            {
+                "type": "int", 
+                "name": "fd"
+            }, 
+            {
+                "type": "user_addr_t", 
+                "name": "ub"
+            }, 
+            {
+                "type": "user_addr_t", 
+                "name": "xsecurity"
+            }, 
+            {
+                "type": "user_addr_t", 
+                "name": "xsecurity_size"
+            }
+        ], 
+        "number": 343, 
+        "funcname": "fstat64_extended"
+    }, 
+    {
+        "args": [
+            {
+                "type": "int", 
+                "name": "fd"
+            }, 
+            {
+                "type": "void *", 
+                "name": "buf"
+            }, 
+            {
+                "type": "user_size_t", 
+                "name": "bufsize"
+            }, 
+            {
+                "type": "off_t *", 
+                "name": "position"
+            }
+        ], 
+        "number": 344, 
+        "funcname": "getdirentries64"
+    }, 
+    {
+        "args": [
+            {
+                "type": "char *", 
+                "name": "path"
+            }, 
+            {
+                "type": "struct statfs64 *", 
+                "name": "buf"
+            }
+        ], 
+        "number": 345, 
+        "funcname": "statfs64"
+    }, 
+    {
+        "args": [
+            {
+                "type": "int", 
+                "name": "fd"
+            }, 
+            {
+                "type": "struct statfs64 *", 
+                "name": "buf"
+            }
+        ], 
+        "number": 346, 
+        "funcname": "fstatfs64"
+    }, 
+    {
+        "args": [
+            {
+                "type": "user_addr_t", 
+                "name": "buf"
+            }, 
+            {
+                "type": "int", 
+                "name": "bufsize"
+            }, 
+            {
+                "type": "int", 
+                "name": "flags"
+            }
+        ], 
+        "number": 347, 
+        "funcname": "getfsstat64"
+    }, 
+    {
+        "args": [
+            {
+                "type": "user_addr_t", 
+                "name": "path"
+            }
+        ], 
+        "number": 348, 
+        "funcname": "__pthread_chdir"
+    }, 
+    {
+        "args": [
+            {
+                "type": "int", 
+                "name": "fd"
+            }
+        ], 
+        "number": 349, 
+        "funcname": "__pthread_fchdir"
+    }, 
+    {
+        "args": [
+            {
+                "type": "void *", 
+                "name": "record"
+            }, 
+            {
+                "type": "int", 
+                "name": "length"
+            }
+        ], 
+        "number": 350, 
+        "funcname": "audit"
+    }, 
+    {
+        "args": [
+            {
+                "type": "int", 
+                "name": "cmd"
+            }, 
+            {
+                "type": "void *", 
+                "name": "data"
+            }, 
+            {
+                "type": "int", 
+                "name": "length"
+            }
+        ], 
+        "number": 351, 
+        "funcname": "auditon"
+    }, 
+    {
+        "args": [
+            {
+                "type": "au_id_t *", 
+                "name": "auid"
+            }
+        ], 
+        "number": 353, 
+        "funcname": "getauid"
+    }, 
+    {
+        "args": [
+            {
+                "type": "au_id_t *", 
+                "name": "auid"
+            }
+        ], 
+        "number": 354, 
+        "funcname": "setauid"
+    }, 
+    {
+        "args": [
+            {
+                "type": "struct auditinfo_addr *", 
+                "name": "auditinfo_addr"
+            }, 
+            {
+                "type": "int", 
+                "name": "length"
+            }
+        ], 
+        "number": 357, 
+        "funcname": "getaudit_addr"
+    }, 
+    {
+        "args": [
+            {
+                "type": "struct auditinfo_addr *", 
+                "name": "auditinfo_addr"
+            }, 
+            {
+                "type": "int", 
+                "name": "length"
+            }
+        ], 
+        "number": 358, 
+        "funcname": "setaudit_addr"
+    }, 
+    {
+        "args": [
+            {
+                "type": "char *", 
+                "name": "path"
+            }
+        ], 
+        "number": 359, 
+        "funcname": "auditctl"
+    }, 
+    {
+        "args": [
+            {
+                "type": "user_addr_t", 
+                "name": "func"
+            }, 
+            {
+                "type": "user_addr_t", 
+                "name": "func_arg"
+            }, 
+            {
+                "type": "user_addr_t", 
+                "name": "stack"
+            }, 
+            {
+                "type": "user_addr_t", 
+                "name": "pthread"
+            }, 
+            {
+                "type": "uint32_t", 
+                "name": "flags"
+            }
+        ], 
+        "number": 360, 
+        "funcname": "bsdthread_create"
+    }, 
+    {
+        "args": [
+            {
+                "type": "user_addr_t", 
+                "name": "stackaddr"
+            }, 
+            {
+                "type": "size_t", 
+                "name": "freesize"
+            }, 
+            {
+                "type": "uint32_t", 
+                "name": "port"
+            }, 
+            {
+                "type": "uint32_t", 
+                "name": "sem"
+            }
+        ], 
+        "number": 361, 
+        "funcname": "bsdthread_terminate"
+    }, 
+    {
+        "args": [
+            {
+                "type": "int", 
+                "name": "fd"
+            }, 
+            {
+                "type": "const struct kevent *", 
+                "name": "changelist"
+            }, 
+            {
+                "type": "int", 
+                "name": "nchanges"
+            }, 
+            {
+                "type": "struct kevent *", 
+                "name": "eventlist"
+            }, 
+            {
+                "type": "int", 
+                "name": "nevents"
+            }, 
+            {
+                "type": "const struct timespec *", 
+                "name": "timeout"
+            }
+        ], 
+        "number": 363, 
+        "funcname": "kevent"
+    }, 
+    {
+        "args": [
+            {
+                "type": "user_addr_t", 
+                "name": "path"
+            }, 
+            {
+                "type": "uid_t", 
+                "name": "owner"
+            }, 
+            {
+                "type": "gid_t", 
+                "name": "group"
+            }
+        ], 
+        "number": 364, 
+        "funcname": "lchown"
+    }, 
+    {
+        "args": [
+            {
+                "type": "pid_t", 
+                "name": "pid"
+            }, 
+            {
+                "type": "user_addr_t", 
+                "name": "tracebuf"
+            }, 
+            {
+                "type": "uint32_t", 
+                "name": "tracebuf_size"
+            }, 
+            {
+                "type": "uint32_t", 
+                "name": "flags"
+            }, 
+            {
+                "type": "uint32_t", 
+                "name": "dispatch_offset"
+            }
+        ], 
+        "number": 365, 
+        "funcname": "stack_snapshot"
+    }, 
+    {
+        "args": [
+            {
+                "type": "user_addr_t", 
+                "name": "threadstart"
+            }, 
+            {
+                "type": "user_addr_t", 
+                "name": "wqthread"
+            }, 
+            {
+                "type": "uint32_t", 
+                "name": "flags"
+            }, 
+            {
+                "type": "user_addr_t", 
+                "name": "stack_addr_hint"
+            }, 
+            {
+                "type": "user_addr_t", 
+                "name": "targetconc_ptr"
+            }, 
+            {
+                "type": "uint32_t", 
+                "name": "dispatchqueue_offset"
+            }, 
+            {
+                "type": "uint32_t", 
+                "name": "tsd_offset"
+            }
+        ], 
+        "number": 366, 
+        "funcname": "bsdthread_register"
+    }, 
+    {
+        "args": [
+            {
+                "type": "int", 
+                "name": "options"
+            }, 
+            {
+                "type": "user_addr_t", 
+                "name": "item"
+            }, 
+            {
+                "type": "int", 
+                "name": "affinity"
+            }, 
+            {
+                "type": "int", 
+                "name": "prio"
+            }
+        ], 
+        "number": 368, 
+        "funcname": "workq_kernreturn"
+    }, 
+    {
+        "args": [
+            {
+                "type": "int", 
+                "name": "fd"
+            }, 
+            {
+                "type": "const struct kevent64_s *", 
+                "name": "changelist"
+            }, 
+            {
+                "type": "int", 
+                "name": "nchanges"
+            }, 
+            {
+                "type": "struct kevent64_s *", 
+                "name": "eventlist"
+            }, 
+            {
+                "type": "int", 
+                "name": "nevents"
+            }, 
+            {
+                "type": "unsigned int", 
+                "name": "flags"
+            }, 
+            {
+                "type": "const struct timespec *", 
+                "name": "timeout"
+            }
+        ], 
+        "number": 369, 
+        "funcname": "kevent64"
+    }, 
+    {
+        "args": [
+            {
+                "type": "int", 
+                "name": "cond_sem"
+            }, 
+            {
+                "type": "int", 
+                "name": "mutex_sem"
+            }, 
+            {
+                "type": "int", 
+                "name": "timeout"
+            }, 
+            {
+                "type": "int", 
+                "name": "relative"
+            }, 
+            {
+                "type": "const struct timespec *", 
+                "name": "ts"
+            }
+        ], 
+        "number": 370, 
+        "funcname": "__old_semwait_signal"
+    }, 
+    {
+        "args": [
+            {
+                "type": "int", 
+                "name": "cond_sem"
+            }, 
+            {
+                "type": "int", 
+                "name": "mutex_sem"
+            }, 
+            {
+                "type": "int", 
+                "name": "timeout"
+            }, 
+            {
+                "type": "int", 
+                "name": "relative"
+            }, 
+            {
+                "type": "const struct timespec *", 
+                "name": "ts"
+            }
+        ], 
+        "number": 371, 
+        "funcname": "__old_semwait_signal_nocancel"
+    }, 
+    {
+        "args": [
+            {
+                "type": "int", 
+                "name": "cmd"
+            }, 
+            {
+                "type": "caddr_t", 
+                "name": "arg1"
+            }, 
+            {
+                "type": "caddr_t", 
+                "name": "arg2"
+            }, 
+            {
+                "type": "caddr_t", 
+                "name": "arg3"
+            }
+        ], 
+        "number": 373, 
+        "funcname": "ledger"
+    }, 
+    {
+        "args": [
+            {
+                "type": "int", 
+                "name": "fd"
+            }, 
+            {
+                "type": "const struct kevent_qos_s *", 
+                "name": "changelist"
+            }, 
+            {
+                "type": "int", 
+                "name": "nchanges"
+            }, 
+            {
+                "type": "struct kevent_qos_s *", 
+                "name": "eventlist"
+            }, 
+            {
+                "type": "int", 
+                "name": "nevents"
+            }, 
+            {
+                "type": "void *", 
+                "name": "data_out"
+            }, 
+            {
+                "type": "size_t *", 
+                "name": "data_available"
+            }, 
+            {
+                "type": "unsigned int", 
+                "name": "flags"
+            }
+        ], 
+        "number": 374, 
+        "funcname": "kevent_qos"
+    }, 
+    {
+        "args": [
+            {
+                "type": "char *", 
+                "name": "fname"
+            }, 
+            {
+                "type": "char **", 
+                "name": "argp"
+            }, 
+            {
+                "type": "char **", 
+                "name": "envp"
+            }, 
+            {
+                "type": "struct mac *", 
+                "name": "mac_p"
+            }
+        ], 
+        "number": 380, 
+        "funcname": "__mac_execve"
+    }, 
+    {
+        "args": [
+            {
+                "type": "char *", 
+                "name": "policy"
+            }, 
+            {
+                "type": "int", 
+                "name": "call"
+            }, 
+            {
+                "type": "user_addr_t", 
+                "name": "arg"
+            }
+        ], 
+        "number": 381, 
+        "funcname": "__mac_syscall"
+    }, 
+    {
+        "args": [
+            {
+                "type": "char *", 
+                "name": "path_p"
+            }, 
+            {
+                "type": "struct mac *", 
+                "name": "mac_p"
+            }
+        ], 
+        "number": 382, 
+        "funcname": "__mac_get_file"
+    }, 
+    {
+        "args": [
+            {
+                "type": "char *", 
+                "name": "path_p"
+            }, 
+            {
+                "type": "struct mac *", 
+                "name": "mac_p"
+            }
+        ], 
+        "number": 383, 
+        "funcname": "__mac_set_file"
+    }, 
+    {
+        "args": [
+            {
+                "type": "char *", 
+                "name": "path_p"
+            }, 
+            {
+                "type": "struct mac *", 
+                "name": "mac_p"
+            }
+        ], 
+        "number": 384, 
+        "funcname": "__mac_get_link"
+    }, 
+    {
+        "args": [
+            {
+                "type": "char *", 
+                "name": "path_p"
+            }, 
+            {
+                "type": "struct mac *", 
+                "name": "mac_p"
+            }
+        ], 
+        "number": 385, 
+        "funcname": "__mac_set_link"
+    }, 
+    {
+        "args": [
+            {
+                "type": "struct mac *", 
+                "name": "mac_p"
+            }
+        ], 
+        "number": 386, 
+        "funcname": "__mac_get_proc"
+    }, 
+    {
+        "args": [
+            {
+                "type": "struct mac *", 
+                "name": "mac_p"
+            }
+        ], 
+        "number": 387, 
+        "funcname": "__mac_set_proc"
+    }, 
+    {
+        "args": [
+            {
+                "type": "int", 
+                "name": "fd"
+            }, 
+            {
+                "type": "struct mac *", 
+                "name": "mac_p"
+            }
+        ], 
+        "number": 388, 
+        "funcname": "__mac_get_fd"
+    }, 
+    {
+        "args": [
+            {
+                "type": "int", 
+                "name": "fd"
+            }, 
+            {
+                "type": "struct mac *", 
+                "name": "mac_p"
+            }
+        ], 
+        "number": 389, 
+        "funcname": "__mac_set_fd"
+    }, 
+    {
+        "args": [
+            {
+                "type": "pid_t", 
+                "name": "pid"
+            }, 
+            {
+                "type": "struct mac *", 
+                "name": "mac_p"
+            }
+        ], 
+        "number": 390, 
+        "funcname": "__mac_get_pid"
+    }, 
+    {
+        "args": [
+            {
+                "type": "int", 
+                "name": "nd"
+            }, 
+            {
+                "type": "u_int32_t *", 
+                "name": "in"
+            }, 
+            {
+                "type": "u_int32_t *", 
+                "name": "ou"
+            }, 
+            {
+                "type": "u_int32_t *", 
+                "name": "ex"
+            }, 
+            {
+                "type": "const struct timespec *", 
+                "name": "ts"
+            }, 
+            {
+                "type": "const struct sigset_t *", 
+                "name": "mask"
+            }
+        ], 
+        "number": 394, 
+        "funcname": "pselect"
+    }, 
+    {
+        "args": [
+            {
+                "type": "int", 
+                "name": "nd"
+            }, 
+            {
+                "type": "u_int32_t *", 
+                "name": "in"
+            }, 
+            {
+                "type": "u_int32_t *", 
+                "name": "ou"
+            }, 
+            {
+                "type": "u_int32_t *", 
+                "name": "ex"
+            }, 
+            {
+                "type": "const struct timespec *", 
+                "name": "ts"
+            }, 
+            {
+                "type": "const struct sigset_t *", 
+                "name": "mask"
+            }
+        ], 
+        "number": 395, 
+        "funcname": "pselect_nocancel"
+    }, 
+    {
+        "args": [
+            {
+                "type": "int", 
+                "name": "fd"
+            }, 
+            {
+                "type": "user_addr_t", 
+                "name": "cbuf"
+            }, 
+            {
+                "type": "user_size_t", 
+                "name": "nbyte"
+            }
+        ], 
+        "number": 396, 
+        "funcname": "read_nocancel"
+    }, 
+    {
+        "args": [
+            {
+                "type": "int", 
+                "name": "fd"
+            }, 
+            {
+                "type": "user_addr_t", 
+                "name": "cbuf"
+            }, 
+            {
+                "type": "user_size_t", 
+                "name": "nbyte"
+            }
+        ], 
+        "number": 397, 
+        "funcname": "write_nocancel"
+    }, 
+    {
+        "args": [
+            {
+                "type": "user_addr_t", 
+                "name": "path"
+            }, 
+            {
+                "type": "int", 
+                "name": "flags"
+            }, 
+            {
+                "type": "int", 
+                "name": "mode"
+            }
+        ], 
+        "number": 398, 
+        "funcname": "open_nocancel"
+    }, 
+    {
+        "args": [
+            {
+                "type": "int", 
+                "name": "fd"
+            }
+        ], 
+        "number": 399, 
+        "funcname": "close_nocancel"
+    }, 
+    {
+        "args": [
+            {
+                "type": "int", 
+                "name": "pid"
+            }, 
+            {
+                "type": "user_addr_t", 
+                "name": "status"
+            }, 
+            {
+                "type": "int", 
+                "name": "options"
+            }, 
+            {
+                "type": "user_addr_t", 
+                "name": "rusage"
+            }
+        ], 
+        "number": 400, 
+        "funcname": "wait4_nocancel"
+    }, 
+    {
+        "args": [
+            {
+                "type": "int", 
+                "name": "s"
+            }, 
+            {
+                "type": "caddr_t", 
+                "name": "msg"
+            }, 
+            {
+                "type": "int", 
+                "name": "flags"
+            }
+        ], 
+        "number": 402, 
+        "funcname": "sendmsg_nocancel"
+    }, 
+    {
+        "args": [
+            {
+                "type": "int", 
+                "name": "s"
+            }, 
+            {
+                "type": "void *", 
+                "name": "buf"
+            }, 
+            {
+                "type": "size_t", 
+                "name": "len"
+            }, 
+            {
+                "type": "int", 
+                "name": "flags"
+            }, 
+            {
+                "type": "struct sockaddr *", 
+                "name": "from"
+            }, 
+            {
+                "type": "int *", 
+                "name": "fromlenaddr"
+            }
+        ], 
+        "number": 403, 
+        "funcname": "recvfrom_nocancel"
+    }, 
+    {
+        "args": [
+            {
+                "type": "int", 
+                "name": "s"
+            }, 
+            {
+                "type": "caddr_t", 
+                "name": "name"
+            }, 
+            {
+                "type": "socklen_t *", 
+                "name": "anamelen"
+            }
+        ], 
+        "number": 404, 
+        "funcname": "accept_nocancel"
+    }, 
+    {
+        "args": [
+            {
+                "type": "caddr_t", 
+                "name": "addr"
+            }, 
+            {
+                "type": "size_t", 
+                "name": "len"
+            }, 
+            {
+                "type": "int", 
+                "name": "flags"
+            }
+        ], 
+        "number": 405, 
+        "funcname": "msync_nocancel"
+    }, 
+    {
+        "args": [
+            {
+                "type": "int", 
+                "name": "fd"
+            }, 
+            {
+                "type": "int", 
+                "name": "cmd"
+            }, 
+            {
+                "type": "long", 
+                "name": "arg"
+            }
+        ], 
+        "number": 406, 
+        "funcname": "fcntl_nocancel"
+    }, 
+    {
+        "args": [
+            {
+                "type": "int", 
+                "name": "nd"
+            }, 
+            {
+                "type": "u_int32_t *", 
+                "name": "in"
+            }, 
+            {
+                "type": "u_int32_t *", 
+                "name": "ou"
+            }, 
+            {
+                "type": "u_int32_t *", 
+                "name": "ex"
+            }, 
+            {
+                "type": "struct timeval *", 
+                "name": "tv"
+            }
+        ], 
+        "number": 407, 
+        "funcname": "select_nocancel"
+    }, 
+    {
+        "args": [
+            {
+                "type": "int", 
+                "name": "fd"
+            }
+        ], 
+        "number": 408, 
+        "funcname": "fsync_nocancel"
+    }, 
+    {
+        "args": [
+            {
+                "type": "int", 
+                "name": "s"
+            }, 
+            {
+                "type": "caddr_t", 
+                "name": "name"
+            }, 
+            {
+                "type": "socklen_t", 
+                "name": "namelen"
+            }
+        ], 
+        "number": 409, 
+        "funcname": "connect_nocancel"
+    }, 
+    {
+        "args": [
+            {
+                "type": "int", 
+                "name": "fd"
+            }, 
+            {
+                "type": "struct iovec *", 
+                "name": "iovp"
+            }, 
+            {
+                "type": "u_int", 
+                "name": "iovcnt"
+            }
+        ], 
+        "number": 411, 
+        "funcname": "readv_nocancel"
+    }, 
+    {
+        "args": [
+            {
+                "type": "int", 
+                "name": "fd"
+            }, 
+            {
+                "type": "struct iovec *", 
+                "name": "iovp"
+            }, 
+            {
+                "type": "u_int", 
+                "name": "iovcnt"
+            }
+        ], 
+        "number": 412, 
+        "funcname": "writev_nocancel"
+    }, 
+    {
+        "args": [
+            {
+                "type": "int", 
+                "name": "s"
+            }, 
+            {
+                "type": "caddr_t", 
+                "name": "buf"
+            }, 
+            {
+                "type": "size_t", 
+                "name": "len"
+            }, 
+            {
+                "type": "int", 
+                "name": "flags"
+            }, 
+            {
+                "type": "caddr_t", 
+                "name": "to"
+            }, 
+            {
+                "type": "socklen_t", 
+                "name": "tolen"
+            }
+        ], 
+        "number": 413, 
+        "funcname": "sendto_nocancel"
+    }, 
+    {
+        "args": [
+            {
+                "type": "int", 
+                "name": "fd"
+            }, 
+            {
+                "type": "user_addr_t", 
+                "name": "buf"
+            }, 
+            {
+                "type": "user_size_t", 
+                "name": "nbyte"
+            }, 
+            {
+                "type": "off_t", 
+                "name": "offset"
+            }
+        ], 
+        "number": 414, 
+        "funcname": "pread_nocancel"
+    }, 
+    {
+        "args": [
+            {
+                "type": "int", 
+                "name": "fd"
+            }, 
+            {
+                "type": "user_addr_t", 
+                "name": "buf"
+            }, 
+            {
+                "type": "user_size_t", 
+                "name": "nbyte"
+            }, 
+            {
+                "type": "off_t", 
+                "name": "offset"
+            }
+        ], 
+        "number": 415, 
+        "funcname": "pwrite_nocancel"
+    }, 
+    {
+        "args": [
+            {
+                "type": "idtype_t", 
+                "name": "idtype"
+            }, 
+            {
+                "type": "id_t", 
+                "name": "id"
+            }, 
+            {
+                "type": "siginfo_t *", 
+                "name": "infop"
+            }, 
+            {
+                "type": "int", 
+                "name": "options"
+            }
+        ], 
+        "number": 416, 
+        "funcname": "waitid_nocancel"
+    }, 
+    {
+        "args": [
+            {
+                "type": "struct pollfd *", 
+                "name": "fds"
+            }, 
+            {
+                "type": "u_int", 
+                "name": "nfds"
+            }, 
+            {
+                "type": "int", 
+                "name": "timeout"
+            }
+        ], 
+        "number": 417, 
+        "funcname": "poll_nocancel"
+    }, 
+    {
+        "args": [
+            {
+                "type": "int", 
+                "name": "msqid"
+            }, 
+            {
+                "type": "void *", 
+                "name": "msgp"
+            }, 
+            {
+                "type": "size_t", 
+                "name": "msgsz"
+            }, 
+            {
+                "type": "int", 
+                "name": "msgflg"
+            }
+        ], 
+        "number": 418, 
+        "funcname": "msgsnd_nocancel"
+    }, 
+    {
+        "args": [
+            {
+                "type": "int", 
+                "name": "msqid"
+            }, 
+            {
+                "type": "void *", 
+                "name": "msgp"
+            }, 
+            {
+                "type": "size_t", 
+                "name": "msgsz"
+            }, 
+            {
+                "type": "long", 
+                "name": "msgtyp"
+            }, 
+            {
+                "type": "int", 
+                "name": "msgflg"
+            }
+        ], 
+        "number": 419, 
+        "funcname": "msgrcv_nocancel"
+    }, 
+    {
+        "args": [
+            {
+                "type": "sem_t *", 
+                "name": "sem"
+            }
+        ], 
+        "number": 420, 
+        "funcname": "sem_wait_nocancel"
+    }, 
+    {
+        "args": [
+            {
+                "type": "user_addr_t", 
+                "name": "aiocblist"
+            }, 
+            {
+                "type": "int", 
+                "name": "nent"
+            }, 
+            {
+                "type": "user_addr_t", 
+                "name": "timeoutp"
+            }
+        ], 
+        "number": 421, 
+        "funcname": "aio_suspend_nocancel"
+    }, 
+    {
+        "args": [
+            {
+                "type": "user_addr_t", 
+                "name": "set"
+            }, 
+            {
+                "type": "user_addr_t", 
+                "name": "sig"
+            }
+        ], 
+        "number": 422, 
+        "funcname": "__sigwait_nocancel"
+    }, 
+    {
+        "args": [
+            {
+                "type": "int", 
+                "name": "cond_sem"
+            }, 
+            {
+                "type": "int", 
+                "name": "mutex_sem"
+            }, 
+            {
+                "type": "int", 
+                "name": "timeout"
+            }, 
+            {
+                "type": "int", 
+                "name": "relative"
+            }, 
+            {
+                "type": "int64_t", 
+                "name": "tv_sec"
+            }, 
+            {
+                "type": "int32_t", 
+                "name": "tv_nsec"
+            }
+        ], 
+        "number": 423, 
+        "funcname": "__semwait_signal_nocancel"
+    }, 
+    {
+        "args": [
+            {
+                "type": "char *", 
+                "name": "type"
+            }, 
+            {
+                "type": "char *", 
+                "name": "path"
+            }, 
+            {
+                "type": "int", 
+                "name": "flags"
+            }, 
+            {
+                "type": "caddr_t", 
+                "name": "data"
+            }, 
+            {
+                "type": "struct mac *", 
+                "name": "mac_p"
+            }
+        ], 
+        "number": 424, 
+        "funcname": "__mac_mount"
+    }, 
+    {
+        "args": [
+            {
+                "type": "char *", 
+                "name": "path"
+            }, 
+            {
+                "type": "struct mac *", 
+                "name": "mac_p"
+            }
+        ], 
+        "number": 425, 
+        "funcname": "__mac_get_mount"
+    }, 
+    {
+        "args": [
+            {
+                "type": "user_addr_t", 
+                "name": "buf"
+            }, 
+            {
+                "type": "int", 
+                "name": "bufsize"
+            }, 
+            {
+                "type": "user_addr_t", 
+                "name": "mac"
+            }, 
+            {
+                "type": "int", 
+                "name": "macsize"
+            }, 
+            {
+                "type": "int", 
+                "name": "flags"
+            }
+        ], 
+        "number": 426, 
+        "funcname": "__mac_getfsstat"
+    }, 
+    {
+        "args": [
+            {
+                "type": "user_addr_t", 
+                "name": "buf"
+            }, 
+            {
+                "type": "size_t", 
+                "name": "bufsize"
+            }, 
+            {
+                "type": "user_addr_t", 
+                "name": "fsid"
+            }, 
+            {
+                "type": "uint64_t", 
+                "name": "objid"
+            }
+        ], 
+        "number": 427, 
+        "funcname": "fsgetpath"
+    }, 
+    {
+        "args": [
+            {
+                "type": "mach_port_name_t", 
+                "name": "port"
+            }
+        ], 
+        "number": 429, 
+        "funcname": "audit_session_join"
+    }, 
+    {
+        "args": [
+            {
+                "type": "int", 
+                "name": "fd"
+            }, 
+            {
+                "type": "user_addr_t", 
+                "name": "portnamep"
+            }
+        ], 
+        "number": 430, 
+        "funcname": "fileport_makeport"
+    }, 
+    {
+        "args": [
+            {
+                "type": "mach_port_name_t", 
+                "name": "port"
+            }
+        ], 
+        "number": 431, 
+        "funcname": "fileport_makefd"
+    }, 
+    {
+        "args": [
+            {
+                "type": "au_asid_t", 
+                "name": "asid"
+            }, 
+            {
+                "type": "user_addr_t", 
+                "name": "portnamep"
+            }
+        ], 
+        "number": 432, 
+        "funcname": "audit_session_port"
+    }, 
+    {
+        "args": [
+            {
+                "type": "int", 
+                "name": "pid"
+            }
+        ], 
+        "number": 433, 
+        "funcname": "pid_suspend"
+    }, 
+    {
+        "args": [
+            {
+                "type": "int", 
+                "name": "pid"
+            }
+        ], 
+        "number": 434, 
+        "funcname": "pid_resume"
+    }, 
+    {
+        "args": [
+            {
+                "type": "int", 
+                "name": "fd"
+            }, 
+            {
+                "type": "uint32_t", 
+                "name": "count"
+            }, 
+            {
+                "type": "const struct shared_file_mapping_np *", 
+                "name": "mappings"
+            }, 
+            {
+                "type": "uint32_t", 
+                "name": "slide"
+            }, 
+            {
+                "type": "uint64_t*", 
+                "name": "slide_start"
+            }, 
+            {
+                "type": "uint32_t", 
+                "name": "slide_size"
+            }
+        ], 
+        "number": 438, 
+        "funcname": "shared_region_map_and_slide_np"
+    }, 
+    {
+        "args": [
+            {
+                "type": "int", 
+                "name": "selector"
+            }, 
+            {
+                "type": "void *", 
+                "name": "value"
+            }, 
+            {
+                "type": "size_t *", 
+                "name": "size"
+            }
+        ], 
+        "number": 439, 
+        "funcname": "kas_info"
+    }, 
+    {
+        "args": [
+            {
+                "type": "uint32_t", 
+                "name": "command"
+            }, 
+            {
+                "type": "int32_t", 
+                "name": "pid"
+            }, 
+            {
+                "type": "uint32_t", 
+                "name": "flags"
+            }, 
+            {
+                "type": "user_addr_t", 
+                "name": "buffer"
+            }, 
+            {
+                "type": "size_t", 
+                "name": "buffersize"
+            }
+        ], 
+        "number": 440, 
+        "funcname": "memorystatus_control"
+    }, 
+    {
+        "args": [
+            {
+                "type": "const char *", 
+                "name": "path"
+            }, 
+            {
+                "type": "const guardid_t *", 
+                "name": "guard"
+            }, 
+            {
+                "type": "u_int", 
+                "name": "guardflags"
+            }, 
+            {
+                "type": "int", 
+                "name": "flags"
+            }, 
+            {
+                "type": "int", 
+                "name": "mode"
+            }
+        ], 
+        "number": 441, 
+        "funcname": "guarded_open_np"
+    }, 
+    {
+        "args": [
+            {
+                "type": "int", 
+                "name": "fd"
+            }, 
+            {
+                "type": "const guardid_t *", 
+                "name": "guard"
+            }
+        ], 
+        "number": 442, 
+        "funcname": "guarded_close_np"
+    }, 
+    {
+        "args": [
+            {
+                "type": "const guardid_t *", 
+                "name": "guard"
+            }, 
+            {
+                "type": "u_int", 
+                "name": "guardflags"
+            }
+        ], 
+        "number": 443, 
+        "funcname": "guarded_kqueue_np"
+    }, 
+    {
+        "args": [
+            {
+                "type": "int", 
+                "name": "fd"
+            }, 
+            {
+                "type": "const guardid_t *", 
+                "name": "guard"
+            }, 
+            {
+                "type": "u_int", 
+                "name": "guardflags"
+            }, 
+            {
+                "type": "const guardid_t *", 
+                "name": "nguard"
+            }, 
+            {
+                "type": "u_int", 
+                "name": "nguardflags"
+            }, 
+            {
+                "type": "int *", 
+                "name": "fdflagsp"
+            }
+        ], 
+        "number": 444, 
+        "funcname": "change_fdguard_np"
+    }, 
+    {
+        "args": [
+            {
+                "type": "uint32_t", 
+                "name": "flags"
+            }
+        ], 
+        "number": 445, 
+        "funcname": "usrctl"
+    }, 
+    {
+        "args": [
+            {
+                "type": "pid_t", 
+                "name": "pid"
+            }, 
+            {
+                "type": "int", 
+                "name": "flavor"
+            }, 
+            {
+                "type": "void *", 
+                "name": "arg"
+            }
+        ], 
+        "number": 446, 
+        "funcname": "proc_rlimit_control"
+    }, 
+    {
+        "args": [
+            {
+                "type": "int", 
+                "name": "socket"
+            }, 
+            {
+                "type": "const sa_endpoints_t *", 
+                "name": "endpoints"
+            }, 
+            {
+                "type": "sae_associd_t", 
+                "name": "associd"
+            }, 
+            {
+                "type": "unsigned int", 
+                "name": "flags"
+            }, 
+            {
+                "type": "const struct iovec *", 
+                "name": "iov"
+            }, 
+            {
+                "type": "unsigned int", 
+                "name": "iovcnt"
+            }, 
+            {
+                "type": "size_t *", 
+                "name": "len"
+            }, 
+            {
+                "type": "sae_connid_t *", 
+                "name": "connid"
+            }
+        ], 
+        "number": 447, 
+        "funcname": "connectx"
+    }, 
+    {
+        "args": [
+            {
+                "type": "int", 
+                "name": "s"
+            }, 
+            {
+                "type": "sae_associd_t", 
+                "name": "aid"
+            }, 
+            {
+                "type": "sae_connid_t", 
+                "name": "cid"
+            }
+        ], 
+        "number": 448, 
+        "funcname": "disconnectx"
+    }, 
+    {
+        "args": [
+            {
+                "type": "int", 
+                "name": "s"
+            }, 
+            {
+                "type": "sae_associd_t", 
+                "name": "aid"
+            }
+        ], 
+        "number": 449, 
+        "funcname": "peeloff"
+    }, 
+    {
+        "args": [
+            {
+                "type": "int", 
+                "name": "domain"
+            }, 
+            {
+                "type": "int", 
+                "name": "type"
+            }, 
+            {
+                "type": "int", 
+                "name": "protocol"
+            }, 
+            {
+                "type": "pid_t", 
+                "name": "epid"
+            }
+        ], 
+        "number": 450, 
+        "funcname": "socket_delegate"
+    }, 
+    {
+        "args": [
+            {
+                "type": "uint64_t", 
+                "name": "cmd"
+            }, 
+            {
+                "type": "uint64_t", 
+                "name": "deadline"
+            }, 
+            {
+                "type": "uint64_t", 
+                "name": "interval"
+            }, 
+            {
+                "type": "uint64_t", 
+                "name": "leeway"
+            }, 
+            {
+                "type": "uint64_t", 
+                "name": "arg4"
+            }, 
+            {
+                "type": "uint64_t", 
+                "name": "arg5"
+            }
+        ], 
+        "number": 451, 
+        "funcname": "telemetry"
+    }, 
+    {
+        "args": [
+            {
+                "type": "uint32_t", 
+                "name": "operation"
+            }, 
+            {
+                "type": "uuid_t", 
+                "name": "uuid"
+            }, 
+            {
+                "type": "size_t", 
+                "name": "uuidlen"
+            }, 
+            {
+                "type": "uint32_t", 
+                "name": "flags"
+            }
+        ], 
+        "number": 452, 
+        "funcname": "proc_uuid_policy"
+    }, 
+    {
+        "args": [
+            {
+                "type": "user_addr_t", 
+                "name": "level"
+            }
+        ], 
+        "number": 453, 
+        "funcname": "memorystatus_get_level"
+    }, 
+    {
+        "args": [
+            {
+                "type": "uint64_t", 
+                "name": "timeout"
+            }, 
+            {
+                "type": "uint64_t", 
+                "name": "flags"
+            }
+        ], 
+        "number": 454, 
+        "funcname": "system_override"
+    }, 
+    {
+        "args": [
+            {
+                "type": "uint32_t", 
+                "name": "operation"
+            }, 
+            {
+                "type": "uint32_t", 
+                "name": "sfi_class"
+            }, 
+            {
+                "type": "uint64_t", 
+                "name": "time"
+            }, 
+            {
+                "type": "uint64_t *", 
+                "name": "out_time"
+            }
+        ], 
+        "number": 456, 
+        "funcname": "sfi_ctl"
+    }, 
+    {
+        "args": [
+            {
+                "type": "uint32_t", 
+                "name": "operation"
+            }, 
+            {
+                "type": "pid_t", 
+                "name": "pid"
+            }, 
+            {
+                "type": "uint32_t", 
+                "name": "sfi_flags"
+            }, 
+            {
+                "type": "uint32_t *", 
+                "name": "out_sfi_flags"
+            }
+        ], 
+        "number": 457, 
+        "funcname": "sfi_pidctl"
+    }, 
+    {
+        "args": [
+            {
+                "type": "uint32_t", 
+                "name": "operation"
+            }, 
+            {
+                "type": "uint64_t *", 
+                "name": "cid"
+            }, 
+            {
+                "type": "uint32_t", 
+                "name": "flags"
+            }
+        ], 
+        "number": 458, 
+        "funcname": "coalition"
+    }, 
+    {
+        "args": [
+            {
+                "type": "uint32_t", 
+                "name": "flavor"
+            }, 
+            {
+                "type": "uint64_t *", 
+                "name": "cid"
+            }, 
+            {
+                "type": "void *", 
+                "name": "buffer"
+            }, 
+            {
+                "type": "size_t *", 
+                "name": "bufsize"
+            }
+        ], 
+        "number": 459, 
+        "funcname": "coalition_info"
+    }, 
+    {
+        "args": [
+            {
+                "type": "uint8_t *", 
+                "name": "parameters"
+            }, 
+            {
+                "type": "size_t", 
+                "name": "parameters_size"
+            }, 
+            {
+                "type": "struct necp_aggregate_result *", 
+                "name": "returned_result"
+            }
+        ], 
+        "number": 460, 
+        "funcname": "int necp_match_policy"
+    }, 
+    {
+        "args": [
+            {
+                "type": "int", 
+                "name": "dirfd"
+            }, 
+            {
+                "type": "struct attrlist *", 
+                "name": "alist"
+            }, 
+            {
+                "type": "void *", 
+                "name": "attributeBuffer"
+            }, 
+            {
+                "type": "size_t", 
+                "name": "bufferSize"
+            }, 
+            {
+                "type": "uint64_t", 
+                "name": "options"
+            }
+        ], 
+        "number": 461, 
+        "funcname": "getattrlistbulk"
+    }, 
+    {
+        "args": [
+            {
+                "type": "int", 
+                "name": "fd"
+            }, 
+            {
+                "type": "user_addr_t", 
+                "name": "path"
+            }, 
+            {
+                "type": "int", 
+                "name": "flags"
+            }, 
+            {
+                "type": "int", 
+                "name": "mode"
+            }
+        ], 
+        "number": 463, 
+        "funcname": "openat"
+    }, 
+    {
+        "args": [
+            {
+                "type": "int", 
+                "name": "fd"
+            }, 
+            {
+                "type": "user_addr_t", 
+                "name": "path"
+            }, 
+            {
+                "type": "int", 
+                "name": "flags"
+            }, 
+            {
+                "type": "int", 
+                "name": "mode"
+            }
+        ], 
+        "number": 464, 
+        "funcname": "openat_nocancel"
+    }, 
+    {
+        "args": [
+            {
+                "type": "int", 
+                "name": "fromfd"
+            }, 
+            {
+                "type": "char *", 
+                "name": "from"
+            }, 
+            {
+                "type": "int", 
+                "name": "tofd"
+            }, 
+            {
+                "type": "char *", 
+                "name": "to"
+            }
+        ], 
+        "number": 465, 
+        "funcname": "renameat"
+    }, 
+    {
+        "args": [
+            {
+                "type": "int", 
+                "name": "fd"
+            }, 
+            {
+                "type": "user_addr_t", 
+                "name": "path"
+            }, 
+            {
+                "type": "int", 
+                "name": "amode"
+            }, 
+            {
+                "type": "int", 
+                "name": "flag"
+            }
+        ], 
+        "number": 466, 
+        "funcname": "faccessat"
+    }, 
+    {
+        "args": [
+            {
+                "type": "int", 
+                "name": "fd"
+            }, 
+            {
+                "type": "user_addr_t", 
+                "name": "path"
+            }, 
+            {
+                "type": "int", 
+                "name": "mode"
+            }, 
+            {
+                "type": "int", 
+                "name": "flag"
+            }
+        ], 
+        "number": 467, 
+        "funcname": "fchmodat"
+    }, 
+    {
+        "args": [
+            {
+                "type": "int", 
+                "name": "fd"
+            }, 
+            {
+                "type": "user_addr_t", 
+                "name": "path"
+            }, 
+            {
+                "type": "uid_t", 
+                "name": "uid"
+            }, 
+            {
+                "type": "gid_t", 
+                "name": "gid"
+            }, 
+            {
+                "type": "int", 
+                "name": "flag"
+            }
+        ], 
+        "number": 468, 
+        "funcname": "fchownat"
+    }, 
+    {
+        "args": [
+            {
+                "type": "int", 
+                "name": "fd"
+            }, 
+            {
+                "type": "user_addr_t", 
+                "name": "path"
+            }, 
+            {
+                "type": "user_addr_t", 
+                "name": "ub"
+            }, 
+            {
+                "type": "int", 
+                "name": "flag"
+            }
+        ], 
+        "number": 469, 
+        "funcname": "fstatat"
+    }, 
+    {
+        "args": [
+            {
+                "type": "int", 
+                "name": "fd"
+            }, 
+            {
+                "type": "user_addr_t", 
+                "name": "path"
+            }, 
+            {
+                "type": "user_addr_t", 
+                "name": "ub"
+            }, 
+            {
+                "type": "int", 
+                "name": "flag"
+            }
+        ], 
+        "number": 470, 
+        "funcname": "fstatat64"
+    }, 
+    {
+        "args": [
+            {
+                "type": "int", 
+                "name": "fd1"
+            }, 
+            {
+                "type": "user_addr_t", 
+                "name": "path"
+            }, 
+            {
+                "type": "int", 
+                "name": "fd2"
+            }, 
+            {
+                "type": "user_addr_t", 
+                "name": "link"
+            }, 
+            {
+                "type": "int", 
+                "name": "flag"
+            }
+        ], 
+        "number": 471, 
+        "funcname": "linkat"
+    }, 
+    {
+        "args": [
+            {
+                "type": "int", 
+                "name": "fd"
+            }, 
+            {
+                "type": "user_addr_t", 
+                "name": "path"
+            }, 
+            {
+                "type": "int", 
+                "name": "flag"
+            }
+        ], 
+        "number": 472, 
+        "funcname": "unlinkat"
+    }, 
+    {
+        "args": [
+            {
+                "type": "int", 
+                "name": "fd"
+            }, 
+            {
+                "type": "user_addr_t", 
+                "name": "path"
+            }, 
+            {
+                "type": "user_addr_t", 
+                "name": "buf"
+            }, 
+            {
+                "type": "size_t", 
+                "name": "bufsize"
+            }
+        ], 
+        "number": 473, 
+        "funcname": "readlinkat"
+    }, 
+    {
+        "args": [
+            {
+                "type": "user_addr_t *", 
+                "name": "path1"
+            }, 
+            {
+                "type": "int", 
+                "name": "fd"
+            }, 
+            {
+                "type": "user_addr_t", 
+                "name": "path2"
+            }
+        ], 
+        "number": 474, 
+        "funcname": "symlinkat"
+    }, 
+    {
+        "args": [
+            {
+                "type": "int", 
+                "name": "fd"
+            }, 
+            {
+                "type": "user_addr_t", 
+                "name": "path"
+            }, 
+            {
+                "type": "int", 
+                "name": "mode"
+            }
+        ], 
+        "number": 475, 
+        "funcname": "mkdirat"
+    }, 
+    {
+        "args": [
+            {
+                "type": "int", 
+                "name": "fd"
+            }, 
+            {
+                "type": "const char *", 
+                "name": "path"
+            }, 
+            {
+                "type": "struct attrlist *", 
+                "name": "alist"
+            }, 
+            {
+                "type": "void *", 
+                "name": "attributeBuffer"
+            }, 
+            {
+                "type": "size_t", 
+                "name": "bufferSize"
+            }, 
+            {
+                "type": "u_long", 
+                "name": "options"
+            }
+        ], 
+        "number": 476, 
+        "funcname": "getattrlistat"
+    }, 
+    {
+        "args": [
+            {
+                "type": "pid_t", 
+                "name": "pid"
+            }, 
+            {
+                "type": "uint64_t", 
+                "name": "uniqueid"
+            }
+        ], 
+        "number": 477, 
+        "funcname": "proc_trace_log"
+    }, 
+    {
+        "args": [
+            {
+                "type": "user_addr_t", 
+                "name": "cmd"
+            }, 
+            {
+                "type": "user_addr_t", 
+                "name": "arg1"
+            }, 
+            {
+                "type": "user_addr_t", 
+                "name": "arg2"
+            }, 
+            {
+                "type": "user_addr_t", 
+                "name": "arg3"
+            }
+        ], 
+        "number": 478, 
+        "funcname": "bsdthread_ctl"
+    }, 
+    {
+        "args": [
+            {
+                "type": "user_addr_t", 
+                "name": "fsid"
+            }, 
+            {
+                "type": "user_addr_t", 
+                "name": "objid"
+            }, 
+            {
+                "type": "int", 
+                "name": "oflags"
+            }
+        ], 
+        "number": 479, 
+        "funcname": "openbyid_np"
+    }, 
+    {
+        "args": [
+            {
+                "type": "int", 
+                "name": "s"
+            }, 
+            {
+                "type": "struct msghdr_x *", 
+                "name": "msgp"
+            }, 
+            {
+                "type": "u_int", 
+                "name": "cnt"
+            }, 
+            {
+                "type": "int", 
+                "name": "flags"
+            }
+        ], 
+        "number": 480, 
+        "funcname": "recvmsg_x"
+    }, 
+    {
+        "args": [
+            {
+                "type": "int", 
+                "name": "s"
+            }, 
+            {
+                "type": "struct msghdr_x *", 
+                "name": "msgp"
+            }, 
+            {
+                "type": "u_int", 
+                "name": "cnt"
+            }, 
+            {
+                "type": "int", 
+                "name": "flags"
+            }
+        ], 
+        "number": 481, 
+        "funcname": "sendmsg_x"
+    }, 
+    {
+        "args": [
+            {
+                "type": "uint32_t", 
+                "name": "op"
+            }, 
+            {
+                "type": "user_addr_t", 
+                "name": "useraddr"
+            }, 
+            {
+                "type": "user_addr_t", 
+                "name": "usersize"
+            }
+        ], 
+        "number": 483, 
+        "funcname": "csrctl"
+    }, 
+    {
+        "args": [
+            {
+                "type": "const char *", 
+                "name": "path"
+            }, 
+            {
+                "type": "const guardid_t *", 
+                "name": "guard"
+            }, 
+            {
+                "type": "u_int", 
+                "name": "guardflags"
+            }, 
+            {
+                "type": "int", 
+                "name": "flags"
+            }, 
+            {
+                "type": "int", 
+                "name": "dpclass"
+            }, 
+            {
+                "type": "int", 
+                "name": "dpflags"
+            }, 
+            {
+                "type": "int", 
+                "name": "mode"
+            }
+        ], 
+        "number": 484, 
+        "funcname": "guarded_open_dprotected_np"
+    }, 
+    {
+        "args": [
+            {
+                "type": "int", 
+                "name": "fd"
+            }, 
+            {
+                "type": "const guardid_t *", 
+                "name": "guard"
+            }, 
+            {
+                "type": "user_addr_t", 
+                "name": "cbuf"
+            }, 
+            {
+                "type": "user_size_t", 
+                "name": "nbyte"
+            }
+        ], 
+        "number": 485, 
+        "funcname": "guarded_write_np"
+    }, 
+    {
+        "args": [
+            {
+                "type": "int", 
+                "name": "fd"
+            }, 
+            {
+                "type": "const guardid_t *", 
+                "name": "guard"
+            }, 
+            {
+                "type": "user_addr_t", 
+                "name": "buf"
+            }, 
+            {
+                "type": "user_size_t", 
+                "name": "nbyte"
+            }, 
+            {
+                "type": "off_t", 
+                "name": "offset"
+            }
+        ], 
+        "number": 486, 
+        "funcname": "guarded_pwrite_np"
+    }, 
+    {
+        "args": [
+            {
+                "type": "int", 
+                "name": "fd"
+            }, 
+            {
+                "type": "const guardid_t *", 
+                "name": "guard"
+            }, 
+            {
+                "type": "struct iovec *", 
+                "name": "iovp"
+            }, 
+            {
+                "type": "int", 
+                "name": "iovcnt"
+            }
+        ], 
+        "number": 487, 
+        "funcname": "guarded_writev_np"
+    }, 
+    {
+        "args": [
+            {
+                "type": "char *", 
+                "name": "from"
+            }, 
+            {
+                "type": "char *", 
+                "name": "to"
+            }, 
+            {
+                "type": "u_int", 
+                "name": "flags"
+            }
+        ], 
+        "number": 488, 
+        "funcname": "rename_ext"
+    }, 
+    {
+        "args": [
+            {
+                "type": "caddr_t", 
+                "name": "addr"
+            }, 
+            {
+                "type": "size_t", 
+                "name": "len"
+            }, 
+            {
+                "type": "uint32_t", 
+                "name": "cryptid"
+            }, 
+            {
+                "type": "uint32_t", 
+                "name": "cputype"
+            }, 
+            {
+                "type": "uint32_t", 
+                "name": "cpusubtype"
+            }
+        ], 
+        "number": 489, 
+        "funcname": "mremap_encrypted"
+    }, 
+    {
+        "args": [
+            {
+                "type": "uuid_t", 
+                "name": "agent_uuid"
+            }, 
+            {
+                "type": "size_t", 
+                "name": "agent_uuidlen"
+            }
+        ], 
+        "number": 490, 
+        "funcname": "netagent_trigger"
+    }, 
+    {
+        "args": [
+            {
+                "type": "int", 
+                "name": "stackshot_config_version"
+            }, 
+            {
+                "type": "user_addr_t", 
+                "name": "stackshot_config"
+            }, 
+            {
+                "type": "size_t", 
+                "name": "stackshot_config_size"
+            }
+        ], 
+        "number": 491, 
+        "funcname": "stack_snapshot_with_config"
+    }, 
+    {
+        "args": [
+            {
+                "type": "user_addr_t", 
+                "name": "tracebuf"
+            }, 
+            {
+                "type": "uint32_t", 
+                "name": "tracebuf_size"
+            }, 
+            {
+                "type": "uint32_t", 
+                "name": "flags"
+            }
+        ], 
+        "number": 492, 
+        "funcname": "microstackshot"
+    }, 
+    {
+        "args": [
+            {
+                "type": "user_addr_t", 
+                "name": "uuid"
+            }, 
+            {
+                "type": "int", 
+                "name": "flags"
+            }, 
+            {
+                "type": "user_addr_t", 
+                "name": "buffer"
+            }, 
+            {
+                "type": "user_ssize_t", 
+                "name": "size"
+            }
+        ], 
+        "number": 493, 
+        "funcname": "grab_pgo_data "
+    }, 
+    {
+        "args": [
+            {
+                "type": "uint32_t", 
+                "name": "operation"
+            }, 
+            {
+                "type": "uint32_t", 
+                "name": "flags"
+            }, 
+            {
+                "type": "struct kpersona_info *", 
+                "name": "info"
+            }, 
+            {
+                "type": "uid_t *", 
+                "name": "id"
+            }, 
+            {
+                "type": "size_t *", 
+                "name": "idlen"
+            }
+        ], 
+        "number": 494, 
+        "funcname": "persona"
+    }, 
+    {
+        "args": [
+            {
+                "type": "uint32_t", 
+                "name": "operation"
+            }, 
+            {
+                "type": "uint64_t", 
+                "name": "work_interval_id"
+            }, 
+            {
+                "type": "void *", 
+                "name": "arg"
+            }, 
+            {
+                "type": "size_t", 
+                "name": "len"
+            }
+        ], 
+        "number": 499, 
+        "funcname": "work_interval_ctl"
+    }
+]
