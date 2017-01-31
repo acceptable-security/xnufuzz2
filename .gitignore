@@ -1,7 +1,13 @@
 # For privacy, don't copy these.
 raw/syscall_logs.txt
 data/examples.json
-xnufuzz2
+results/*
+
+# Annoying files
 .DS_Store
 .gdb_history
-results/*
+
+# Build files
+xnufuzz2
+*.o
+*.tar

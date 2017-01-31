@@ -12,8 +12,11 @@ In order to completely download and compile the software you can run the followi
 
 	git clone https://github.com/block8437/xnufuzz2.git
 	cd xnufuzz2
-	g++ xnufuzz2.cpp -o xnufuzz2 -std=c++11
+	g++ src/xnufuzz2.cpp -o xnufuzz2 -std=c++11
 
 To generate a new `raw/syscall_logs.txt`, run `sudo dtruss -p ANYPID 2>> raw/syscall_logs.txt`. `ANYPID` should be substituted for any PID you would like to read the syscalls from. In my experience, running it with finder yields quite a bit of good results. Afterwards, run `syslogparser.py` to generate `data/examples.json`.
 
 ## Running
+Simply running
+	./xnufuzz2
+Will suffice for running it in normal situations. No arguments are currently supported for fuzzing specific syscalls.

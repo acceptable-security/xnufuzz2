@@ -652,20 +652,6 @@
             {
                 "type": "size_t", 
                 "name": "len"
-            }
-        ], 
-        "number": 73, 
-        "funcname": "munmap"
-    }, 
-    {
-        "args": [
-            {
-                "type": "caddr_t", 
-                "name": "addr"
-            }, 
-            {
-                "type": "size_t", 
-                "name": "len"
             }, 
             {
                 "type": "int", 
@@ -1156,20 +1142,6 @@
         ], 
         "number": 128, 
         "funcname": "rename"
-    }, 
-    {
-        "args": [
-            {
-                "type": "int", 
-                "name": "fd"
-            }, 
-            {
-                "type": "int", 
-                "name": "how"
-            }
-        ], 
-        "number": 131, 
-        "funcname": "flock"
     }, 
     {
         "args": [
@@ -3652,16 +3624,6 @@
             {
                 "type": "pid_t", 
                 "name": "pid"
-            }
-        ], 
-        "number": 310, 
-        "funcname": "getsid"
-    }, 
-    {
-        "args": [
-            {
-                "type": "pid_t", 
-                "name": "pid"
             }, 
             {
                 "type": "int", 
@@ -4358,28 +4320,6 @@
         ], 
         "number": 360, 
         "funcname": "bsdthread_create"
-    }, 
-    {
-        "args": [
-            {
-                "type": "user_addr_t", 
-                "name": "stackaddr"
-            }, 
-            {
-                "type": "size_t", 
-                "name": "freesize"
-            }, 
-            {
-                "type": "uint32_t", 
-                "name": "port"
-            }, 
-            {
-                "type": "uint32_t", 
-                "name": "sem"
-            }
-        ], 
-        "number": 361, 
-        "funcname": "bsdthread_terminate"
     }, 
     {
         "args": [
@@ -5342,20 +5282,6 @@
         ], 
         "number": 421, 
         "funcname": "aio_suspend_nocancel"
-    }, 
-    {
-        "args": [
-            {
-                "type": "user_addr_t", 
-                "name": "set"
-            }, 
-            {
-                "type": "user_addr_t", 
-                "name": "sig"
-            }
-        ], 
-        "number": 422, 
-        "funcname": "__sigwait_nocancel"
     }, 
     {
         "args": [
