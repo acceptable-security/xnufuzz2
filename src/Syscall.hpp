@@ -14,6 +14,7 @@ public:
 	 Syscall(int number);	
 	 Syscall(int number, int count, ...);
 
+	 void addArg(uint64_t arg);
 	 void execute();
 };
 

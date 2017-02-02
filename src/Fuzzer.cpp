@@ -81,19 +81,19 @@ void Fuzzer::addBuffers() {
 }
 
 void Fuzzer::initFds() {
-	this->fds.push_back(open("/dev/null", O_RDONLY));
-	this->fds.push_back(open("/dev/null", O_RDWR));
-	this->fds.push_back(open("/dev/null", O_WRONLY));
-	this->fds.push_back(open("/bin/bash", O_RDONLY));
-	this->fds.push_back(open("/etc/passwd", O_RDONLY));
-	this->fds.push_back(open("/dev/urandom", O_RDONLY));
-	this->fds.push_back(open("test.txt", O_RDWR));
-	this->fds.push_back(open("test.txt", O_WRONLY));
+	this->file_fds.push_back(open("/dev/null", O_RDONLY));
+	this->file_fds.push_back(open("/dev/null", O_RDWR));
+	this->file_fds.push_back(open("/dev/null", O_WRONLY));
+	this->file_fds.push_back(open("/bin/bash", O_RDONLY));
+	this->file_fds.push_back(open("/etc/passwd", O_RDONLY));
+	this->file_fds.push_back(open("/dev/urandom", O_RDONLY));
+	this->file_fds.push_back(open("test.txt", O_RDWR));
+	this->file_fds.push_back(open("test.txt", O_WRONLY));
 
-#define ADD(a) \
-	this->fds.push_back(socket(a, SOCK_STREAM, 0)); \
-	this->fds.push_back(socket(a, SOCK_DGRAM, 0)); \
-	this->fds.push_back(socket(a, SOCK_SEQPACKET, 0)); \
+	#define ADD(a) \
+		this->socket_fds.push_back(socket(a, SOCK_STREAM, 0)); \
+		this->socket_fds.push_back(socket(a, SOCK_DGRAM, 0)); \
+		this->socket_fds.push_back(socket(a, SOCK_SEQPACKET, 0)); \
 
 	ADD(AF_UNIX)
 	ADD(AF_LOCAL)
@@ -127,47 +127,100 @@ FuzzAction_t Fuzzer::getAction(int number) {
 	int indice = this->getSyscallIndice(number);
 
 	if ( indice == -1 ) {
-		return FUZZ_ERROR;
+		return FUZZ_ACTION_ERROR;
 	}
 
 	std::string name = this->syscalls[indice]["funcname"];
 
 	if ( examples.find(name) == examples.end() ) {
-		return FUZZ_RANDOM;
+		return FUZZ_ACTION_RANDOM;
 	}
 	else {
 		switch ( rand() % 3 ) {
 			case 0:
 			case 1:
-				return FUZZ_MUTATE;
+				return FUZZ_ACTION_MUTATE;
 			case 2:
-				return FUZZ_RANDOM;
-			default: return FUZZ_MUTATE;
+				return FUZZ_ACTION_RANDOM;
+			default: return FUZZ_ACTION_MUTATE;
 		}
 	}
 }
 
-Syscall Fuzzer::run(int number) {
+FuzzArgType_t Fuzzer::getType(std::string type, std::string name) {
+	if ( name.compare(0, 2, "fd") == 0 ) {
+		return FUZZ_ARG_FILE;
+	}
+	else if ( name == "s" ) {
+		return FUZZ_ARG_SOCKET;
+	}
+	else {
+		if ( type == "int" || type == "uint" || type == "u_int" || type == "int32_t" || type == "uint32_t" ||
+			 type == "gid_t" || type == "off_t" || type == "sae_connid_t" || type == "mach_port_name_t" || type == "unsigned int" || 
+			 type == "idtype_t" || type == "uid_t" || type == "pid_t" ) {
+			return FUZZ_ARG_INT32;
+		}
+		else if ( type == "user_size_t" || type == "size_t" || type == "socklen_t" || type == "user_ssize_t" ) {
+			return FUZZ_ARG_SIZE;
+		}
+		else if ( type == "u_long" || type == "long" || type == "int64_t" || type == "id_t" || type == "uint64_t" || type == "key_t" || type == "semun_t" || type == "sigset_t" ) {
+			return FUZZ_ARG_INT64;
+		}
+		else if ( type.back() == '*' || type == "user_addr_t" || type == "caddr_t" ) {
+			return FUZZ_ARG_BUFFER;
+		}
+		else {
+			return FUZZ_ARG_UNKNOWN;
+		}
+	}
+}
+
+Syscall Fuzzer::fuzz(int number) {
 	Syscall sys = Syscall(number);
+
 	int indice = this->getSyscallIndice(number);
 	FuzzAction_t action = this->getAction(number);
 	int argc = this->syscalls[indice]["args"].size();
 
 	switch ( action ) {
-		case FUZZ_ERROR: break;
-		case FUZZ_RANDOM: {
+		case FUZZ_ACTION_ERROR: break;
+		case FUZZ_ACTION_RANDOM: {
 			for ( int i = 0; i < argc; i++ ) {
-				
+				std::string arg = this->syscalls[i]["name"];
+				std::string type = this->syscalls[i]["type"];
+
+				switch ( this->getType(type, arg) ) {
+					case FUZZ_ARG_INT32:
+						sys.addArg((uint64_t) this->getRandomInt());
+						break;
+
+					case FUZZ_ARG_BUFFER:
+						sys.addArg((uint64_t) this->getRandomBuffer());
+						break;
+
+					case FUZZ_ARG_FILE:
+						sys.addArg((uint64_t) this->file_fds[rand() % this->file_fds.size()]);
+						break;
+
+					case FUZZ_ARG_SOCKET:
+						sys.addArg((uint64_t) this->socket_fds[rand() % this->file_fds.size()]);
+						break;
+
+					case FUZZ_ARG_INT64:
+					default:
+						sys.addArg(this->getRandomLong());	
+						break;
+				}
 			}
 		}
 
-		case FUZZ_MUTATE: {
+		case FUZZ_ACTION_MUTATE: {
 
 			break;
 		}
 
-		case FUZZ_SCRIPT: {
-			
+		case FUZZ_ACTION_SCRIPT: {
+
 			break;
 		}
 	}

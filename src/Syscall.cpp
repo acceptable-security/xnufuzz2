@@ -17,6 +17,10 @@ Syscall::Syscall(int number, int count, ...) {
 	va_end(args);
 }
 
+void Syscall::addArg(uint64_t arg) {
+	this->args.push_back(arg);
+}
+
 void Syscall::execute() {
 	switch ( this->args.size() ) {
 		case 1:
