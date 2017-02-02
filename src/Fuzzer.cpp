@@ -198,6 +198,10 @@ Syscall Fuzzer::fuzz(int number) {
 						sys.addArg((uint64_t) this->getRandomBuffer());
 						break;
 
+					case FUZZ_ARG_SIZE:
+						sys.addArg(BUFFER_SIZE); // TODO - Adapting this to make sense for each type would be helpful.
+						break;
+
 					case FUZZ_ARG_FILE:
 						sys.addArg((uint64_t) this->file_fds[rand() % this->file_fds.size()]);
 						break;
@@ -215,12 +219,12 @@ Syscall Fuzzer::fuzz(int number) {
 		}
 
 		case FUZZ_ACTION_MUTATE: {
-
+			// TODO - 
 			break;
 		}
 
 		case FUZZ_ACTION_SCRIPT: {
-
+			// TODO -
 			break;
 		}
 	}
