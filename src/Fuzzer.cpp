@@ -418,20 +418,30 @@ Syscall Fuzzer::fuzz(int number) {
 
 		case FUZZ_ACTION_MUTATE: {
 			std::string func = this->syscalls[indice]["funcname"];
+			json allexamples = this->examples[func];
+
+			if ( allexamples.size() == 0 ) {
+				sys.invalidate();
+				return sys;
+			}
+
+			json example = allexamples[rand() % allexamples.size()];
+			json argv = this->syscalls[indice]["args"];
 
 			for ( int i = 0; i < argc; i++ ) {
-				std::string arg = this->syscalls[indice]["args"][i]["name"];
-				std::string type = this->syscalls[indice]["args"][i]["type"];
-				json allexamples = this->examples[func];
-
-				if ( allexamples.size() < argc ) {
+				std::string arg = argv[i]["name"];
+				std::string type = argv[i]["type"];
+				
+				if ( example.size() < argc ) {
 					// TODO - Handle this
 					sys.invalidate();
 					return sys;
 				}
 
-				json example = allexamples[rand() % allexamples.size()];
-				std::cout << func << "<" << type << ">" << std::endl;
+				if ( example[i].type() == json::value_t::null ) {
+					sys.invalidate();
+					return sys;
+				}
 
 				switch ( this->getType(type, arg) ) {
 					case FUZZ_ARG_INT32: {
