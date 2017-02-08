@@ -55,7 +55,6 @@ private:
 	int getSyscallIndice(int number);
 	FuzzAction_t getAction(int syscall);
 	FuzzArgType_t getType(std::string type, std::string name);
-	int getExampleIndice(int number);
 
 public:
 	Fuzzer(const char* syscalls_path);

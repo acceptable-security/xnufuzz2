@@ -127,11 +127,6 @@ int Fuzzer::getSyscallIndice(int number) {
 	return -1;
 }
 
-int Fuzzer::getExampleIndice(int number) {
-	int syscall = this->getSyscallIndice(number);
-	
-}
-
 FuzzAction_t Fuzzer::getAction(int number) {
 	int indice = this->getSyscallIndice(number);
 
@@ -244,15 +239,30 @@ Syscall Fuzzer::fuzz(int number) {
 			for ( int i = 0; i < argc; i++ ) {
 				std::string arg = this->syscalls[indice]["args"][i]["name"];
 				std::string type = this->syscalls[indice]["args"][i]["type"];
+				json allexamples = this->examples[this->syscalls[indice]["funcname"].get<std::string>()];
+
+				if ( allexamples.size() < argc ) {
+					// TODO - Handle this
+					sys.invalidate();
+					return sys;
+				}
+
+				json example = allexamples[rand() % allexamples.size()];
 
 				switch ( this->getType(type, arg) ) {
-					case FUZZ_ARG_INT32:
-						sys.addArg((uint64_t) this->getRandomInt(), FUZZ_ARG_INT32);
-						break;
+					case FUZZ_ARG_INT32: {
+						uint32_t val = example[i];
+						this->mutateInt(&val);
+						sys.addArg((uint64_t) val, FUZZ_ARG_INT32);
+							break;
+					}
 
-					case FUZZ_ARG_BUFFER:
-						sys.addArg((uint64_t) this->getRandomBuffer(), FUZZ_ARG_BUFFER);
+					case FUZZ_ARG_BUFFER: {
+						const char* val = (example[i].get<std::string>()).c_str();
+						this->mutateBuffer((uint8_t*) val, BUFFER_SIZE);
+						sys.addArg((uint64_t) val, FUZZ_ARG_BUFFER);
 						break;
+					}
 
 					// TODO - Adapting this to make sense for each type would be helpful.
 					case FUZZ_ARG_SIZE:
@@ -269,7 +279,9 @@ Syscall Fuzzer::fuzz(int number) {
 
 					case FUZZ_ARG_INT64:
 					default:
-						sys.addArg(this->getRandomLong(), FUZZ_ARG_INT64);	
+						uint64_t val = example[i];
+						this->mutateLong(&val);
+						sys.addArg(val, FUZZ_ARG_INT64);	
 						break;
 				}
 			}
