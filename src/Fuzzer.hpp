@@ -63,15 +63,12 @@ public:
 	int getSyscallCount() { return this->syscalls.size(); };
 	Syscall fuzz(int syscall);
 
-	void* getRandomBuffer();
-	uint64_t getRandomLong();
-	uint32_t getRandomInt();
-	uint8_t getRandomChar();
+	template<typename T>
+	T getRandom();
 
+	template<typename T>
+	void mutate(T* number);
 	void mutateBuffer(uint8_t* buffer, uint64_t size);
-	void mutateLong(uint64_t* number);
-	void mutateInt(uint32_t* number);
-	void mutateChar(uint8_t* number);
 };
 
 #endif

@@ -179,6 +179,187 @@ FuzzArgType_t Fuzzer::getType(std::string type, std::string name) {
 	}
 }
 
+
+
+// =======================
+template<>
+void* Fuzzer::getRandom() {
+	if ( this->buf_index >= this->buffers.size() ) {
+		this->addBuffers();
+	}
+
+	char* buffer = (char*) this->buffers[this->buf_index++];
+
+	switch ( rand() % 3 ) {
+		case 0:
+			memset(buffer, this->char_dist(this->rng), BUFFER_SIZE);
+			break;
+
+		case 1:
+		case 2:
+			for ( int i = 0; i < BUFFER_SIZE; i++ ) {
+				buffer[i] = this->char_dist(this->rng);
+			}
+			break;
+	}
+
+	return (void*) buffer;
+}
+
+template<>
+uint64_t Fuzzer::getRandom() {
+	switch ( rand() % 5 ) {
+		case 0:
+		case 1: {
+			long a = (long) int_dist(rng);
+			long b = (long) int_dist(rng);
+		
+			return (a << 32) + b;
+		}
+
+		case 2:
+			return -1;
+
+		case 3:
+			return 1;
+
+		default:
+			return 0;
+	}
+}
+
+template<>
+uint32_t Fuzzer::getRandom() {
+	switch ( rand() % 5 ) {
+		case 0:
+		case 1:
+			return this->int_dist(this->rng);
+		case 2:
+			return -1;
+		case 3:
+			return 1;
+		default:
+			return 0;
+	}
+}
+
+template<>
+uint8_t Fuzzer::getRandom() {
+	switch ( rand() % 5 ) {
+		case 0:
+		case 1:
+		case 2:
+			return this->char_dist(this->rng);
+		case 3:
+			return -1;
+		case 4:
+			return 1;
+		default:
+			return 0;
+	}
+}
+
+// Instead of this deciding how many times to mutate the variables, this should be called for the
+// amount of times the variables should be mutated.
+template<>
+void Fuzzer::mutate(uint64_t* number) {
+	int random_pos = rand() % 64;
+
+	switch ( rand() % 5 ) {
+		case 0:
+			*number = (*number) ^ (1 << random_pos);
+			break;
+
+		case 1:
+			*number = (*number) + 1;
+			break;
+
+		case 2:
+			*number = (*number) - 1;
+			break;
+
+		case 3:
+			*number = (*number) >> 1;
+			break;
+
+		case 4:
+			*number = ((*number) << 1) & 0xFFFFFFFFFFFFFFFF;
+			break;
+	}
+}
+
+template<>
+void Fuzzer::mutate(uint32_t* number) {
+	int random_pos = rand() % 32;
+
+	switch ( rand() % 5 ) {
+		case 0:
+			*number = (*number) ^ (1 << random_pos);
+			break;
+
+		case 1:
+			*number = (*number) + 1;
+			break;
+
+		case 2:
+			*number = (*number) - 1;
+			break;
+
+		case 3:
+			*number = (*number) >> 1;
+			break;
+
+		case 4:
+			*number = ((*number) << 1) & 0xFFFFFFFF;
+			break;
+	}
+}
+
+template<>
+void Fuzzer::mutate(uint8_t* number) {
+	int random_pos = rand() % 8;
+
+	switch ( rand() % 5 ) {
+		case 0:
+			*number = (*number) ^ (1 << random_pos);
+			break;
+
+		case 1:
+			*number = (*number) + 1;
+			break;
+
+		case 2:
+			*number = (*number) - 1;
+			break;
+
+		case 3:
+			*number = (*number) >> 1;
+			break;
+
+		case 4:
+			*number = ((*number) << 1) & 0xFF;
+			break;
+	}
+}
+
+void Fuzzer::mutateBuffer(uint8_t* buffer, uint64_t size) {
+	int index = rand() % size;
+
+	switch ( rand() % 3 ) {
+		case 0:
+			this->mutate<uint8_t>(&buffer[index]);
+			break;
+
+		case 1:
+			buffer[index] = this->getRandom<uint8_t>();
+			break;
+
+		case 2:
+			buffer[index] = ~buffer[index];
+			break;
+	}
+}
+
 Syscall Fuzzer::fuzz(int number) {
 	this->buf_index = 0;
 	Syscall sys = Syscall(number);
@@ -207,11 +388,11 @@ Syscall Fuzzer::fuzz(int number) {
 
 				switch ( this->getType(type, arg) ) {
 					case FUZZ_ARG_INT32:
-						sys.addArg((uint64_t) this->getRandomInt(), FUZZ_ARG_INT32);
+						sys.addArg((uint64_t) this->getRandom<uint32_t>(), FUZZ_ARG_INT32);
 						break;
 
 					case FUZZ_ARG_BUFFER:
-						sys.addArg((uint64_t) this->getRandomBuffer(), FUZZ_ARG_BUFFER);
+						sys.addArg((uint64_t) this->getRandom<void*>(), FUZZ_ARG_BUFFER);
 						break;
 
 					// TODO - Adapting this to make sense for each type would be helpful.
@@ -229,7 +410,7 @@ Syscall Fuzzer::fuzz(int number) {
 
 					case FUZZ_ARG_INT64:
 					default:
-						sys.addArg(this->getRandomLong(), FUZZ_ARG_INT64);	
+						sys.addArg(this->getRandom<uint64_t>(), FUZZ_ARG_INT64);	
 						break;
 				}
 			}
@@ -252,7 +433,7 @@ Syscall Fuzzer::fuzz(int number) {
 				switch ( this->getType(type, arg) ) {
 					case FUZZ_ARG_INT32: {
 						uint32_t val = example[i];
-						this->mutateInt(&val);
+						this->mutate<uint32_t>(&val);
 						sys.addArg((uint64_t) val, FUZZ_ARG_INT32);
 							break;
 					}
@@ -280,7 +461,7 @@ Syscall Fuzzer::fuzz(int number) {
 					case FUZZ_ARG_INT64:
 					default:
 						uint64_t val = example[i];
-						this->mutateLong(&val);
+						this->mutate(&val);
 						sys.addArg(val, FUZZ_ARG_INT64);	
 						break;
 				}
@@ -294,176 +475,4 @@ Syscall Fuzzer::fuzz(int number) {
 	}
 
 	return sys;
-}
-
-void* Fuzzer::getRandomBuffer() {
-	if ( this->buf_index >= this->buffers.size() ) {
-		this->addBuffers();
-	}
-
-	char* buffer = (char*) this->buffers[this->buf_index++];
-
-	switch ( rand() % 3 ) {
-		case 0:
-			memset(buffer, this->char_dist(this->rng), BUFFER_SIZE);
-			break;
-
-		case 1:
-		case 2:
-			for ( int i = 0; i < BUFFER_SIZE; i++ ) {
-				buffer[i] = this->char_dist(this->rng);
-			}
-			break;
-	}
-
-	return (void*) buffer;
-}
-
-uint64_t Fuzzer::getRandomLong() {
-	switch ( rand() % 5 ) {
-		case 0:
-		case 1: {
-			long a = (long) int_dist(rng);
-			long b = (long) int_dist(rng);
-		
-			return (a << 32) + b;
-		}
-
-		case 2:
-			return -1;
-
-		case 3:
-			return 1;
-
-		default:
-			return 0;
-	}
-}
-
-uint32_t Fuzzer::getRandomInt() {
-	switch ( rand() % 5 ) {
-		case 0:
-		case 1:
-			return this->int_dist(this->rng);
-		case 2:
-			return -1;
-		case 3:
-			return 1;
-		default:
-			return 0;
-	}
-}
-
-uint8_t Fuzzer::getRandomChar() {
-	switch ( rand() % 5 ) {
-		case 0:
-		case 1:
-		case 2:
-			return this->char_dist(this->rng);
-		case 3:
-			return -1;
-		case 4:
-			return 1;
-		default:
-			return 0;
-	}
-}
-
-// Instead of this deciding how many times to mutate the variables, this should be called for the
-// amount of times the variables should be mutated.
-
-void Fuzzer::mutateBuffer(uint8_t* buffer, uint64_t size) {
-	int index = rand() % size;
-
-	switch ( rand() % 3 ) {
-		case 0:
-			this->mutateChar(&buffer[index]);
-			break;
-
-		case 1:
-			buffer[index] = this->getRandomChar();
-			break;
-
-		case 2:
-			buffer[index] = ~buffer[index];
-			break;
-	}
-}
-
-void Fuzzer::mutateLong(uint64_t* number) {
-	int random_pos = rand() % 64;
-
-	switch ( rand() % 5 ) {
-		case 0:
-			*number = (*number) ^ (1 << random_pos);
-			break;
-
-		case 1:
-			*number = (*number) + 1;
-			break;
-
-		case 2:
-			*number = (*number) - 1;
-			break;
-
-		case 3:
-			*number = (*number) >> 1;
-			break;
-
-		case 4:
-			*number = ((*number) << 1) & 0xFFFFFFFFFFFFFFFF;
-			break;
-	}
-}
-
-void Fuzzer::mutateInt(uint32_t* number) {
-	int random_pos = rand() % 32;
-
-	switch ( rand() % 5 ) {
-		case 0:
-			*number = (*number) ^ (1 << random_pos);
-			break;
-
-		case 1:
-			*number = (*number) + 1;
-			break;
-
-		case 2:
-			*number = (*number) - 1;
-			break;
-
-		case 3:
-			*number = (*number) >> 1;
-			break;
-
-		case 4:
-			*number = ((*number) << 1) & 0xFFFFFFFF;
-			break;
-	}
-}
-
-void Fuzzer::mutateChar(uint8_t* number) {
-	int random_pos = rand() % 8;
-
-	switch ( rand() % 5 ) {
-		case 0:
-			*number = (*number) ^ (1 << random_pos);
-			break;
-
-		case 1:
-			*number = (*number) + 1;
-			break;
-
-		case 2:
-			*number = (*number) - 1;
-			break;
-
-		case 3:
-			*number = (*number) >> 1;
-			break;
-
-		case 4:
-			*number = ((*number) << 1) & 0xFF;
-			break;
-	}
 }
