@@ -17,10 +17,15 @@ In order to completely download and compile the software you can run the followi
 To generate a new `raw/syscall_logs.txt`, run `sudo dtruss -p ANYPID 2>> raw/syscall_logs.txt`. `ANYPID` should be substituted for any PID you would like to read the syscalls from. In my experience, running it with finder yields quite a bit of good results. Afterwards, run `./tools/syslogparser.py` to generate `data/examples.json`.
 
 ## Running
-Simply running
-	./xnufuzz2
-Will suffice for running it in normal situations. No arguments are currently supported for fuzzing specific syscalls.
-
+	$ ./xnufuzz2 --help
+	usage: ./xnufuzz2 [options] ...
+	options:
+	  -c, --count       amount of syscalls to generate (int [=0])
+	  -s, --specific    specific syscall to fuzz (int [=-1])
+	  -p, --syscalls    path to syscalls (string [=data/syscalls.json])
+	  -e, --examples    path to examples (string [=data/examples.json])
+	  -d, --dry         dry run or not (bool [=0])
+	  -?, --help        print this message
 ## Credits
 - Brian Smith: Creation of this project & all fuzzing & syscall related code
 - Apple/FreeBSD/CMU: Creation of XNU
