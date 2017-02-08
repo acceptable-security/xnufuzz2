@@ -1,5 +1,5 @@
 CC = g++
-CFLAGS = -std=c++11 -c
+CFLAGS = -std=c++11 -c -g
 LDFLAGS =
 NAME = xnufuzz2
 EXT = .cpp
