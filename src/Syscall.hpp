@@ -7,15 +7,19 @@
 
 class  Syscall {
 private:
-	int number;
+	int number = -1;
 	std::vector<uint64_t> args;
+	std::vector<int> types;
 
 public:
-	 Syscall(int number);	
-	 Syscall(int number, int count, ...);
+	 Syscall(int number) : number(number) {};
 
-	 void addArg(uint64_t arg);
+	 void addArg(uint64_t arg, int type);
 	 void execute();
+	 void debug();
+	 void invalidate() { this->number = -1; };
+
+	 int getNumber() { return this->number; };
 };
 
 #endif

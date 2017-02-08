@@ -1,0 +1,2 @@
+#define BUFFER_COUNT 10
+#define BUFFER_SIZE 10

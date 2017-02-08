@@ -55,12 +55,13 @@ private:
 	int getSyscallIndice(int number);
 	FuzzAction_t getAction(int syscall);
 	FuzzArgType_t getType(std::string type, std::string name);
+	int getExampleIndice(int number);
 
 public:
 	Fuzzer(const char* syscalls_path);
 	Fuzzer(const char* syscalls_path, const char* examples_path);
 
-	
+	int getSyscallCount() { return this->syscalls.size(); };
 	Syscall fuzz(int syscall);
 
 	void* getRandomBuffer();

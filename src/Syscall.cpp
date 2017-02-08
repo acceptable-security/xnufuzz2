@@ -1,24 +1,61 @@
+#include "config.hpp"
 #include "Syscall.hpp"
+#include "Fuzzer.hpp"
 
-Syscall::Syscall(int number) {
-	this->number = number;
+#include <iostream>
+
+void Syscall::addArg(uint64_t arg, int type) {
+	this->args.push_back(arg);
+	this->types.push_back(type);
 }
 
-Syscall::Syscall(int number, int count, ...) {
-	this->number = number;
+void Syscall::debug() {
+	std::cout << "syscall(" << std::dec << this->number;
 
-	va_list args;
-	va_start(args, count);
-
-	for ( int i = 0; i < count; i++ ) {
-		this->args.push_back(va_arg(args, uint64_t));
+	if ( this->args.size() > 0 ) {
+		std::cout << ", ";
 	}
 
-	va_end(args);
-}
+	for ( int i = 0; i < this->args.size(); i++ ) {
+		switch ( this->types[i] ) {
+			case FUZZ_ARG_INT64:
+			case FUZZ_ARG_INT32:
+				std::cout << std::hex << "0x" << this->args[i];
+				break;
 
-void Syscall::addArg(uint64_t arg) {
-	this->args.push_back(arg);
+			case FUZZ_ARG_SIZE:
+				std::cout << std::dec << this->args[i];
+				break;
+
+			case FUZZ_ARG_FLOAT:
+				std::cout << std::dec << this->args[i];
+				break;
+
+			case FUZZ_ARG_BUFFER: {
+				std::cout << "\"";
+				char* buffer = (char*) this->args[i];
+				for ( int j = 0; j < BUFFER_SIZE; j++ ) {
+					std::cout << "\\x" << std::hex << std::setfill('0') << std::setw(2) << (int) (buffer[j] & 0xFF);
+				}
+				std::cout << "\"";
+				break;
+			}
+			case FUZZ_ARG_FILE: 
+			case FUZZ_ARG_SOCKET:
+				// ?????
+				std::cout << std::dec << this->args[i];
+				break;
+
+			case FUZZ_ARG_UNKNOWN:
+				break;
+		}
+ 
+		if ( i < this->args.size() - 1 ) {
+			std::cout << ", ";
+		}
+	}
+
+	std::cout << ");" << std::endl << std::flush;
 }
 
 void Syscall::execute() {

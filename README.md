@@ -20,3 +20,10 @@ To generate a new `raw/syscall_logs.txt`, run `sudo dtruss -p ANYPID 2>> raw/sys
 Simply running
 	./xnufuzz2
 Will suffice for running it in normal situations. No arguments are currently supported for fuzzing specific syscalls.
+
+## Credits
+- Brian Smith: Creation of this project & all fuzzing & syscall related code
+- Apple/FreeBSD/CMU: Creation of XNU
+- github.com/bringhurst: Creation of xnufuzz - this inspiration for this project
+- github.com/tanakh: Creation of cmdline.h (in this project named )
+- github.com/nlohmann: Creation of json.hpp

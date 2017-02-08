@@ -1,3 +1,4 @@
+#include "config.hpp"
 #include "Fuzzer.hpp"
 
 #include <fcntl.h>
@@ -5,9 +6,6 @@
 #include <iostream>
 #include <sys/types.h>
 #include <sys/socket.h>
-
-#define BUFFER_COUNT 10
-#define BUFFER_SIZE 1024
 
 Fuzzer::Fuzzer(const char* syscalls_path) {
 	std::cout << "[+] Reading data/syscalls.json..." << std::endl;
@@ -35,7 +33,7 @@ Fuzzer::Fuzzer(const char* syscalls_path) {
 }
 
 Fuzzer::Fuzzer(const char* syscalls_path, const char* examples_path) {
-	std::cout << "[+] Reading data/syscalls.json..." << std::endl;
+	std::cout << "[+] Reading " << syscalls_path << "..." << std::endl;
 	
 	// Read and parse the data/syscalls.json file
 	std::ifstream syscall_file(syscalls_path);
@@ -52,7 +50,7 @@ Fuzzer::Fuzzer(const char* syscalls_path, const char* examples_path) {
 		return;
 	}
 
-	std::cout << "[+] Attempting to load data/examples.json" << std::endl;
+	std::cout << "[+] Attempting to load " << examples_path << std::endl;
 
 	// Attempt to read & parse data/examples.json
 	std::ifstream examples_file(examples_path);
@@ -73,6 +71,8 @@ Fuzzer::Fuzzer(const char* syscalls_path, const char* examples_path) {
 }
 
 void Fuzzer::addBuffers() {
+	std::cout << "[+] Creating buffers" << std::endl;
+
 	for ( int i = 0; i < BUFFER_COUNT; i++ ) {
 		void* buffer = malloc(BUFFER_SIZE);
 		memset(buffer, 0, BUFFER_SIZE);
@@ -81,6 +81,8 @@ void Fuzzer::addBuffers() {
 }
 
 void Fuzzer::initFds() {
+	std::cout << "[+] Creating file descriptors" << std::endl;
+
 	this->file_fds.push_back(open("/dev/null", O_RDONLY));
 	this->file_fds.push_back(open("/dev/null", O_RDWR));
 	this->file_fds.push_back(open("/dev/null", O_WRONLY));
@@ -104,6 +106,8 @@ void Fuzzer::initFds() {
 }
 
 void Fuzzer::initRandom() {
+	std::cout << "[+] Creating random state" << std::endl;
+
 	this->rng.seed(std::random_device()());
 	this->int_dist = std::uniform_int_distribution<std::mt19937::result_type>(0, 0xFFFFFFFF);
 	this->char_dist = std::uniform_int_distribution<std::mt19937::result_type>(0, 0xFF);
@@ -121,6 +125,11 @@ int Fuzzer::getSyscallIndice(int number) {
 	}
 
 	return -1;
+}
+
+int Fuzzer::getExampleIndice(int number) {
+	int syscall = this->getSyscallIndice(number);
+	
 }
 
 FuzzAction_t Fuzzer::getAction(int number) {
@@ -176,51 +185,94 @@ FuzzArgType_t Fuzzer::getType(std::string type, std::string name) {
 }
 
 Syscall Fuzzer::fuzz(int number) {
+	this->buf_index = 0;
 	Syscall sys = Syscall(number);
 
 	int indice = this->getSyscallIndice(number);
+
+	if ( indice == -1 ) {
+		sys.invalidate();
+		return sys;
+	}
+
 	FuzzAction_t action = this->getAction(number);
 	int argc = this->syscalls[indice]["args"].size();
+
+	if ( argc == 0 ) {
+		sys.invalidate();
+		return sys;
+	}
 
 	switch ( action ) {
 		case FUZZ_ACTION_ERROR: break;
 		case FUZZ_ACTION_RANDOM: {
 			for ( int i = 0; i < argc; i++ ) {
-				std::string arg = this->syscalls[i]["name"];
-				std::string type = this->syscalls[i]["type"];
+				std::string arg = this->syscalls[indice]["args"][i]["name"];
+				std::string type = this->syscalls[indice]["args"][i]["type"];
 
 				switch ( this->getType(type, arg) ) {
 					case FUZZ_ARG_INT32:
-						sys.addArg((uint64_t) this->getRandomInt());
+						sys.addArg((uint64_t) this->getRandomInt(), FUZZ_ARG_INT32);
 						break;
 
 					case FUZZ_ARG_BUFFER:
-						sys.addArg((uint64_t) this->getRandomBuffer());
+						sys.addArg((uint64_t) this->getRandomBuffer(), FUZZ_ARG_BUFFER);
 						break;
 
+					// TODO - Adapting this to make sense for each type would be helpful.
 					case FUZZ_ARG_SIZE:
-						sys.addArg(BUFFER_SIZE); // TODO - Adapting this to make sense for each type would be helpful.
+						sys.addArg(BUFFER_SIZE, FUZZ_ARG_SIZE); 
 						break;
 
 					case FUZZ_ARG_FILE:
-						sys.addArg((uint64_t) this->file_fds[rand() % this->file_fds.size()]);
+						sys.addArg((uint64_t) this->file_fds[rand() % this->file_fds.size()], FUZZ_ARG_FILE);
 						break;
 
 					case FUZZ_ARG_SOCKET:
-						sys.addArg((uint64_t) this->socket_fds[rand() % this->file_fds.size()]);
+						sys.addArg((uint64_t) this->socket_fds[rand() % this->file_fds.size()], FUZZ_ARG_SOCKET);
 						break;
 
 					case FUZZ_ARG_INT64:
 					default:
-						sys.addArg(this->getRandomLong());	
+						sys.addArg(this->getRandomLong(), FUZZ_ARG_INT64);	
 						break;
 				}
 			}
 		}
 
 		case FUZZ_ACTION_MUTATE: {
-			// TODO - 
-			break;
+			for ( int i = 0; i < argc; i++ ) {
+				std::string arg = this->syscalls[indice]["args"][i]["name"];
+				std::string type = this->syscalls[indice]["args"][i]["type"];
+
+				switch ( this->getType(type, arg) ) {
+					case FUZZ_ARG_INT32:
+						sys.addArg((uint64_t) this->getRandomInt(), FUZZ_ARG_INT32);
+						break;
+
+					case FUZZ_ARG_BUFFER:
+						sys.addArg((uint64_t) this->getRandomBuffer(), FUZZ_ARG_BUFFER);
+						break;
+
+					// TODO - Adapting this to make sense for each type would be helpful.
+					case FUZZ_ARG_SIZE:
+						sys.addArg(BUFFER_SIZE, FUZZ_ARG_SIZE); 
+						break;
+
+					case FUZZ_ARG_FILE:
+						sys.addArg((uint64_t) this->file_fds[rand() % this->file_fds.size()], FUZZ_ARG_FILE);
+						break;
+
+					case FUZZ_ARG_SOCKET:
+						sys.addArg((uint64_t) this->socket_fds[rand() % this->file_fds.size()], FUZZ_ARG_SOCKET);
+						break;
+
+					case FUZZ_ARG_INT64:
+					default:
+						sys.addArg(this->getRandomLong(), FUZZ_ARG_INT64);	
+						break;
+				}
+			}
 		}
 
 		case FUZZ_ACTION_SCRIPT: {
@@ -239,14 +291,15 @@ void* Fuzzer::getRandomBuffer() {
 
 	char* buffer = (char*) this->buffers[this->buf_index++];
 
-	switch ( rand() % 2 ) {
+	switch ( rand() % 3 ) {
 		case 0:
-			memset(buffer, this->getRandomChar(), BUFFER_SIZE);
+			memset(buffer, this->char_dist(this->rng), BUFFER_SIZE);
 			break;
 
 		case 1:
+		case 2:
 			for ( int i = 0; i < BUFFER_SIZE; i++ ) {
-				buffer[i] = this->getRandomChar();
+				buffer[i] = this->char_dist(this->rng);
 			}
 			break;
 	}
@@ -279,7 +332,7 @@ uint32_t Fuzzer::getRandomInt() {
 	switch ( rand() % 5 ) {
 		case 0:
 		case 1:
-			return int_dist(rng);
+			return this->int_dist(this->rng);
 		case 2:
 			return -1;
 		case 3:
@@ -293,10 +346,11 @@ uint8_t Fuzzer::getRandomChar() {
 	switch ( rand() % 5 ) {
 		case 0:
 		case 1:
-			return char_dist(rng);
 		case 2:
-			return -1;
+			return this->char_dist(this->rng);
 		case 3:
+			return -1;
+		case 4:
 			return 1;
 		default:
 			return 0;
